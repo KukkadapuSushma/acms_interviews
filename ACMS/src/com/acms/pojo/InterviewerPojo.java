@@ -1,43 +1,32 @@
 package com.acms.pojo;
 
 public class InterviewerPojo {
-	private long partner_id;
 	private String Name;
-	private String Website;
-	private String City;
-	private String Description;
-	private String Address;
+	private String Level;
+	private String Phone;
+	private String Email;
 
 	public InterviewerPojo() {
 
 	}
 
-	public InterviewerPojo(long partner_id,String Name,String Website,String City,String Address){
+	public InterviewerPojo(String Name,String Level,String Phone,String Email){
 		super();
-		this.partner_id = partner_id;
 		this.Name = Name;
-		this.Website = Website;
-		this.City = City;
-		this.Address = Address;
-		this.Description = Description;
-	}
-	/*public PartnerPojo(int partner_id){
-		super();
-		this.partner_id = partner_id;
-	}*/
-	public long getPartner_id() {
-		return partner_id;
+		this.Level = Level;
+		this.Phone = Phone;
+		this.Email = Email;
 	}
 	public String getName() {
 		return Name;
 	}
-	public String getWebsite() {
-		return Website;
+	public String getLevel() {
+		return Level;
 	}
-	public String getCity() {
-		return City;
+	public String getPhone() {
+		return Phone;
 	}
-	public String getAddress() {
-		return Address;
+	public String getEmail() {
+		return Email;
 	}
 }

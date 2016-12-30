@@ -22,66 +22,41 @@ public class AddInterviewerController extends HttpServlet {
 			String Phone = request.getParameter("phone");
 			String Email = request.getParameter("email");
 			System.out.println(Name+"jhbd\n");
-			InterviewerPojo pp = new InterviewerPojo((Long)0L, Name, Level, Phone, Email);
+			InterviewerPojo pp = new InterviewerPojo(Name, Level, Phone, Email);
 			InterviewerDAO pdao = new InterviewerDAO();	
 			int result = pdao.addInterviewer(pp);
 		    partner_id = result;
+		    String error = "Please add again";
 			System.out.println(result);
 			if(result > 0) {
 					response.sendRedirect("addContact.jsp?partner_id="+partner_id+"&Name="+Name);
 					System.out.println("record inserted into db");
 				}
 				else {
-			    	response.sendRedirect("partnerView.jsp");
+			    	response.sendRedirect("addInterviewer.jsp?error="+error);
 				}
 				System.out.println("pop should be dispalyed");
-				//response.sendRedirect("addPartner.jsp?error='errorissent'");
 				PrintWriter out = response.getWriter();
 				out.println("<script type=\"text/javascript\">");
 				out.println("alert('Partner you added exits! Add a NEW partner');");
 				out.println("location='addPartner.jsp';");
 				out.print("</script>");
-		} catch (ClassNotFoundException e) {
-			System.out.println("class not found exception");
-		} catch (SQLException e) {
-			System.out.println("sql exception");
 		} catch (NullPointerException e) {
 			System.out.println("null pointer exception");
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
 	}
 
-	
-
-	 
-
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
 		doProcess(request,response);
-
-		
-
-		
-
-	
-
-		
-
-		
-
 	}
-
-
-
-
-	
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
 		doProcess(request,response);	
-
 	}
-
-
-
-
 }
