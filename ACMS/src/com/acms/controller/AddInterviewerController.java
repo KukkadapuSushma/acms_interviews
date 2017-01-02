@@ -7,8 +7,6 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
-
 import com.acms.dao.InterviewerDAO;
 import com.acms.pojo.InterviewerPojo;
 
@@ -16,21 +14,21 @@ public class AddInterviewerController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	protected void doProcess(HttpServletRequest request, HttpServletResponse response)  throws ServletException, IOException{
 		try {
-			int partner_id;
 			String Name = request.getParameter("name");
-			String Level = request.getParameter("level");
+			String level = request.getParameter("level");
+			int Level = Integer.parseInt(level.trim());
 			String Phone = request.getParameter("phone");
 			String Email = request.getParameter("email");
 			System.out.println(Name+"jhbd\n");
 			InterviewerPojo pp = new InterviewerPojo(Name, Level, Phone, Email);
 			InterviewerDAO pdao = new InterviewerDAO();	
 			int result = pdao.addInterviewer(pp);
-		    partner_id = result;
 		    String error = "Please add again";
 			System.out.println(result);
 			if(result > 0) {
-					response.sendRedirect("addContact.jsp?partner_id="+partner_id+"&Name="+Name);
-					System.out.println("record inserted into db");
+				String msg = "Created Successfully";
+				response.sendRedirect("homeView.jsp?msg="+msg);
+				System.out.println("record inserted into db");
 				}
 				else {
 			    	response.sendRedirect("addInterviewer.jsp?error="+error);

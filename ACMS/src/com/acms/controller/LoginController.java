@@ -45,7 +45,7 @@ public class LoginController extends HttpServlet {
 					//System.out.println("this is role" + role);
 					//session.setAttribute("role",role);
 					//System.out.println(role+"role is this");
-					RequestDispatcher rd = request.getRequestDispatcher("layout.jsp");
+					RequestDispatcher rd = request.getRequestDispatcher("mainView.jsp");
 					rd.forward(request, response);
 					//response.sendRedirect("UIHome.jsp");
 				}

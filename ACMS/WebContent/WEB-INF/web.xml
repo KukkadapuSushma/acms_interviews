@@ -38,4 +38,24 @@
     <servlet-name>AddInterviewerController</servlet-name>
     <url-pattern>/AddInterviewerController</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>CreateScheduleController</display-name>
+    <servlet-name>CreateScheduleController</servlet-name>
+    <servlet-class>com.acms.controller.CreateScheduleController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>CreateScheduleController</servlet-name>
+    <url-pattern>/CreateScheduleController</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>AddCandidateController</display-name>
+    <servlet-name>AddCandidateController</servlet-name>
+    <servlet-class>com.acms.controller.AddCandidateController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AddCandidateController</servlet-name>
+    <url-pattern>/AddCandidateController</url-pattern>
+  </servlet-mapping>
 </web-app>

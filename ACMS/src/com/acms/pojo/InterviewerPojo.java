@@ -2,7 +2,7 @@ package com.acms.pojo;
 
 public class InterviewerPojo {
 	private String Name;
-	private String Level;
+	private int Level;
 	private String Phone;
 	private String Email;
 
@@ -10,7 +10,7 @@ public class InterviewerPojo {
 
 	}
 
-	public InterviewerPojo(String Name,String Level,String Phone,String Email){
+	public InterviewerPojo(String Name,int Level,String Phone,String Email){
 		super();
 		this.Name = Name;
 		this.Level = Level;
@@ -20,7 +20,7 @@ public class InterviewerPojo {
 	public String getName() {
 		return Name;
 	}
-	public String getLevel() {
+	public int getLevel() {
 		return Level;
 	}
 	public String getPhone() {

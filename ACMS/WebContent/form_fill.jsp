@@ -23,26 +23,26 @@ body {
 <div class = "row">
   <div class="col-sm-6 col-md-4 col-md-offset-4">
   <div class = "well">
-  <center><h3>Interviewer Information</h3></center>
+  <center><h3>Fill it!</h3></center>
   <br>
-  <form role="form" method = "post" action = "AddInterviewerController">
+  <form role="form">
     <div class="form-group">
-      <label for="name">Interviewer name:</label>
-      <input type="text" class="form-control" name="name" id="name" placeholder="Enter name of Interviewer">
+      <label for="name">Interviwers:</label>
+      <input type="text" class="form-control" id="name" placeholder="Enter interviewers and their levels">
     </div>
     <div class="form-group">
-      <label for="level">Level:</label>
-      <input type="text" class="form-control" name="level" id="level" placeholder="Enter level of Interviewer">
+      <label for="phno">Candidates:</label>
+      <input type="text" class="form-control" id="phno" placeholder="Enter candidate names">
     </div>
     <div class="form-group">
-      <label for="address">Phone number:</label>
-      <input type="text" class="form-control" name="phone" id="phone" placeholder="Enter phone number of Interviewer">
+      <label for="email">Slot Time:</label>
+      <input type="email" class="form-control" id="email" placeholder="Enter time for each interview">
     </div>
     <div class="form-group">
-      <label for="address">Email id:</label>
-      <input type="text" class="form-control" name="email" id="email" placeholder="Enter email id of Interviewer">
+      <label for="address">Schedule Timings:</label>
+      <input type="text" class="form-control" id="address" placeholder="Enter Timings for the day">
     </div>
-    <center><button type="submit" class="btn btn-danger">Submit Info</button></center>
+    <center><button type="submit" class="btn btn-danger">Create Schedule</button></center>
    </form>
 </div>
 </div>

@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
-	<name>ACMS</name>
+	<name>ACMS3</name>
 	<comment></comment>
 	<projects>
+		<project>activation</project>
+		<project>mail</project>
+		<project>mysql-connector-java-5.1.39-bin</project>
+		<project>log4j-1.2.17</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>

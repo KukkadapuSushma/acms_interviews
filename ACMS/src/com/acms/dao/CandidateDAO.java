@@ -1,29 +1,28 @@
 package com.acms.dao;
 
+import com.acms.pojo.CandidatePojo;
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-import com.acms.pojo.InterviewerPojo;
-
-public class InterviewerDAO {
+public class CandidateDAO {
 
 	Connection con;
 	ConnectionDAO cdao;
 	PreparedStatement pst;
 	ResultSet rs;
 
-	public InterviewerDAO() throws ClassNotFoundException, SQLException {
+	public CandidateDAO() throws ClassNotFoundException, SQLException {
 		cdao = new ConnectionDAO();
 		con = cdao.getConnection();
 	}
 
-	public int addInterviewer(InterviewerPojo pp) {
+	public int addCandidate(CandidatePojo pp) {
 		int result = 0;
 		try {
-			int level = pp.getLevel();
-			pst =  con.prepareStatement("insert into interviewer(Name,email,mobile,level) values('"+pp.getName()+"','"+pp.getEmail()+"','"+pp.getPhone()+"','"+pp.getLevel()+"')");
+			pst =  con.prepareStatement("insert into candidate values('"+pp.getName()+"','"+pp.getGender()+"','"+pp.getEmail()+"','"+pp.getPhone()+"','"+pp.getQuali()+"','"+pp.getLevel()+"')");
 			//pst.setInt(1, pp.getPartner_id());
 			result = pst.executeUpdate();
 			System.out.println(pst);

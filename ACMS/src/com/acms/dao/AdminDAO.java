@@ -21,7 +21,7 @@ public class AdminDAO {
 			throws ClassNotFoundException,SQLException{
 			boolean result = false;
 			System.out.println("in admin dao");
-			pst =  con.prepareStatement("Select login_id, aes_decrypt(password,'qwerty') from ts_login where login_id = '" + user + "'");
+			pst =  con.prepareStatement("Select login_id, aes_decrypt(password,'qwerty') from login where login_id = '" + user + "'");
 			//System.out.println(pst);
 			ResultSet r  =  pst.executeQuery();
 			if(r.next()){

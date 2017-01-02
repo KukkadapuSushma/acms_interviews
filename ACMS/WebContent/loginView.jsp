@@ -13,16 +13,76 @@ String error = request.getParameter("error");
     <link href="styles/bootstrap.css" rel="stylesheet">
     <link href="styles/stylish-portfolio.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+<style>
+.carousel-inner > .item > img,
+  .carousel-inner > .item > a > img {
+      width: 80%;
+      margin: auto;
+  }
+  body {
+    background-image: url("bg.gif");
+  }
+  #content{
+    position: absolute;
+    top: 40px;
+    right: 230px;
+  }
+  #uu {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+  }
+  h3{
+    color: black;
+  }
+</style>
 </head>
 <body>
     <!-- Header -->
     <header id="top" class="header">
-        <div class="text-vertical-center">
-            <h1>Placement Pool</h1>
-             <br>
-               <button type="button" class="btn btn-success btn-lg" title = "Login to continue" id="myBtn">Login</button>
+       <div class="well well-sm">
+<img src="https://images.cooltext.com/4846392.png" width="489" height="100" alt="Sched Amazon" />
+<div class="container">
+  <div id="content">
+       <button type="button" class="btn btn-danger btn-lg" title = "Login to continue" id="myBtn">Login</button>    
+  </div>
+</div>
+<div id = "uu">
+<img src="powered-by-amazon.gif" width="200" height="100" alt="Amazon"/>
+</div>
+</div>
+<div class="container">
+  <div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+      <li data-target="#myCarousel" data-slide-to="2"></li>
+    </ol>
+    <div class="carousel-inner" role="listbox">
+      <div class="item active">
+        <img src="interview4.gif" width="460" height="345">
+        <div class="carousel-caption">
+          <h3>Create an account</h3>
         </div>
-    </header>
+      </div>
+    
+      <div class="item">
+        <img src="interview1.gif" width="460" height="345">
+        <div class="carousel-caption">
+          <h3>Schedule for the day</h3>
+        </div>
+      </div>
+
+      <div class="item">
+        <img src="interview4.gif" width="460" height="345">
+        <div class="carousel-caption">
+          <h3>Check out your colleague's feedback too!!</h3>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</header>
     <!-- Modal -->
   <div class="modal fade" id="myModal" role="dialog">
     <div class="modal-dialog">
@@ -43,12 +103,11 @@ String error = request.getParameter("error");
               <label for="psw"><span class="glyphicon glyphicon-eye-open"></span> Password</label>
               <input type="password" class="form-control" type="password" id="password" name="password" placeholder = "Enter Password" required>
             </div>
-              <button type="submit" class="btn btn-success btn-block"><span class="glyphicon glyphicon-off"></span> Login</button>
+              <button type="submit" class="btn btn-danger btn-block"><span class="glyphicon glyphicon-off"></span> Login</button>
           </form>
           <% if(error != null){
 	   %> <h5><font color = red><%=error%></font></h5> 
    <%} %>
-          
         </div>
         <div class="modal-footer">
           <button type="submit" class="btn btn-danger btn-default pull-left" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Cancel</button>
