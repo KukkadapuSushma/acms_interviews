@@ -29,7 +29,6 @@ public class LoginController extends HttpServlet {
 			session.setAttribute("P",password);
 			//create object of UserDAO
 				AdminDAO adao = new AdminDAO();
-			//request.getRequestDispatcher("/links.html").include(request, response);
 			System.out.println("created object adao");
 			//call signup()
 			boolean result = adao.login(user, password);
@@ -47,7 +46,6 @@ public class LoginController extends HttpServlet {
 					//System.out.println(role+"role is this");
 					RequestDispatcher rd = request.getRequestDispatcher("mainView.jsp");
 					rd.forward(request, response);
-					//response.sendRedirect("UIHome.jsp");
 				}
 				else{
 					response.sendRedirect("loginView.jsp?error= Please check your username and password");

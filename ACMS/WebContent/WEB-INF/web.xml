@@ -58,4 +58,24 @@
     <servlet-name>AddCandidateController</servlet-name>
     <url-pattern>/AddCandidateController</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>feedbackController</display-name>
+    <servlet-name>feedbackController</servlet-name>
+    <servlet-class>com.acms.controller.feedbackController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>feedbackController</servlet-name>
+    <url-pattern>/feedbackController</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>LogoutController</display-name>
+    <servlet-name>LogoutController</servlet-name>
+    <servlet-class>com.acms.controller.LogoutController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>LogoutController</servlet-name>
+    <url-pattern>/LogoutController</url-pattern>
+  </servlet-mapping>
 </web-app>

@@ -50,8 +50,7 @@ li {
   <li><a href="addInterviewer.jsp" target="frame_b">Add Interviewer</a></li><br>
   <li><a href="addCandidate.jsp" target="frame_b">Add Candidate</a></li><br>
   <li><a href="schedule.jsp" target = "frame_b">Schedule for today</a></li><br>
-  <li><a href="feedback.jsp" target = "frame_b">Review a candidate</a></li><br>
-  <li><a href="aws.html" target = "frame_b">About AWS</a></li><br>
+  <li><a href="LogoutController" target = "_top">Logout</a></li><br>
 </ul>  
 </h4>
 <br>

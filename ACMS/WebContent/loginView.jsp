@@ -20,7 +20,7 @@ String error = request.getParameter("error");
       margin: auto;
   }
   body {
-    background-image: url("bg.gif");
+    background-color:dimgray;
   }
   #content{
     position: absolute;

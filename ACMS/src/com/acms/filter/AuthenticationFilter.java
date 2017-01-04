@@ -17,6 +17,7 @@ public class AuthenticationFilter implements Filter {
 	public void init(FilterConfig fConfig) throws ServletException {
 		System.out.println("UserLoginCheckFilter init()");
 	}
+	
 	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
 		HttpServletRequest hRequest =(HttpServletRequest)request;
 		HttpServletResponse hResponse = (HttpServletResponse)response;
@@ -24,7 +25,7 @@ public class AuthenticationFilter implements Filter {
 		String username = (String)hs.getAttribute("U");
 		System.out.println(username);
 		if(username != null) {
-			 System.out.println("user not null");	
+			 System.out.println("user is null");	
 		     chain.doFilter(request, response);
 	    }
 		else{
@@ -36,5 +37,4 @@ public class AuthenticationFilter implements Filter {
 	public void destroy() {
 		System.out.println("UserLoginCheckFilter destroy()");
 	}
-
 }
