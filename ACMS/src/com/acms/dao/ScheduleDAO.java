@@ -55,6 +55,7 @@ public class ScheduleDAO {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		System.out.println(result);
 		return result;
 	}
 	
@@ -81,12 +82,29 @@ public class ScheduleDAO {
 		return  cc;
 	}
 
-	public int getFeedback() {
-		// TODO Auto-generated method stub
-		
-		return 0;
+	public ArrayList<CandidatePojo> getFeedback(String c_name, String phone) throws SQLException{
+		ArrayList<CandidatePojo>  cc = new ArrayList<CandidatePojo>();
+		CandidatePojo bean;
+		try {
+			pst = con.prepareStatement("select i.Name,r.level,r.result,r.feedback from interviewer i,interview_review r,candidate c where c.mobile = "+phone+" and r.mobile_fk ="+phone+" and i.email = r.email_ifk and c.name=" +c_name);
+			System.out.println(pst);
+			rs=pst.executeQuery();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			} catch (NullPointerException e){
+				return null;
+			}
+		 while(rs.next()) {
+			 String name = rs.getString("i.name");
+			 String level = rs.getString("r.level");	
+			 String result = rs.getString("r.result");
+			 String feedback = rs.getString("r.feedback");
+			 bean = new CandidatePojo(name,level,result,feedback,"",0);
+			 cc.add(bean);
+		 }	 
+		return  cc;
 	}
-
+	
 	public int setFeedback(String i_id, String feed, String res) {
 		// TODO Auto-generated method stub
 		int result = 0;

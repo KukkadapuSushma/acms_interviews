@@ -13,7 +13,6 @@ import com.acms.dao.ScheduleDAO;
 
 public class feedbackController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
 	protected void doProcess(HttpServletRequest request, HttpServletResponse response)  throws ServletException, IOException, ClassNotFoundException, SQLException{
 		try {
 			String i_id = request.getParameter("i_name");

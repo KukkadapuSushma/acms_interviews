@@ -50,6 +50,7 @@ li {
   <li><a href="addInterviewer.jsp" target="frame_b">Add Interviewer</a></li><br>
   <li><a href="addCandidate.jsp" target="frame_b">Add Candidate</a></li><br>
   <li><a href="schedule.jsp" target = "frame_b">Schedule for today</a></li><br>
+  <li><a href="getFeedback.jsp" target = "frame_b">Get Feedback On Candidate</a></li><br>
   <li><a href="LogoutController" target = "_top">Logout</a></li><br>
 </ul>  
 </h4>
@@ -70,6 +71,6 @@ li {
 <br>
 <br>
 <br>
-<img src="amazon_icon.gif" width="140" height="70" alt="Amazon"/>
+<img src="#" width="140" height="70" alt="Amazon"/>
 </body>
 </html>
