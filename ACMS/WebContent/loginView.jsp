@@ -41,14 +41,17 @@ String error = request.getParameter("error");
     <!-- Header -->
     <header id="top" class="header">
        <div class="well well-sm">
-<img src="https://images.cooltext.com/4846392.png" width="489" height="100" alt="Sched Amazon" />
+<img src="https://images.cooltext.com/4846392.png" width="489" height="100" alt="Amazon" />
+ <% if(error != null){
+	   %> <center><h3><font color = red><%=error%></font></h3></center> 
+   <%} %>
 <div class="container">
   <div id="content">
        <button type="button" class="btn btn-danger btn-lg" title = "Login to continue" id="myBtn">Login</button>    
   </div>
 </div>
 <div id = "uu">
-<img src="powered-by-amazon.gif" width="200" height="100" alt="Amazon"/>
+<img src="http://www.artsfon.com/pic/201510/1920x1080/artsfon.com-72885.jpg" width="200" height="100" alt="Amazon"/>
 </div>
 </div>
 <div class="container">
@@ -105,9 +108,6 @@ String error = request.getParameter("error");
             </div>
               <button type="submit" class="btn btn-danger btn-block"><span class="glyphicon glyphicon-off"></span> Login</button>
           </form>
-          <% if(error != null){
-	   %> <h5><font color = red><%=error%></font></h5> 
-   <%} %>
         </div>
         <div class="modal-footer">
           <button type="submit" class="btn btn-danger btn-default pull-left" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Cancel</button>

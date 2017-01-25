@@ -32,7 +32,14 @@ body {
     </div>
     <div class="form-group">
       <label for="level">Level:</label>
-      <input type="text" class="form-control" name="level" id="level" placeholder="Enter level of Interviewer" required>
+         <select class="form-control" style="max-width: 300;" id = "level" name="level" required>
+      	<option value="#">Select</option>
+  		<option value="1">1</option>
+  		<option value="2">2</option>
+  		<option value="3">3</option>
+  		<option value="4">4</option>
+	</select>      
+<!--       <input type="text" class="form-control" name="level" id="level" placeholder="Enter level of Interviewer" required> -->
     </div>
     <div class="form-group">
       <label for="address">Phone number:</label>

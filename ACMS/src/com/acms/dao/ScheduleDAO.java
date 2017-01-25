@@ -32,7 +32,7 @@ public class ScheduleDAO {
 					rs=pst.executeQuery();
 					int st = 9;int et = 10;
 					while(rs.next()){
-						if(rs1.getInt("level") >= rs.getInt("level") && rs.getInt("level") < 4 && max_si < 4){
+						if(rs1.getInt("level") >= rs.getInt("level") && rs.getInt("level") < 4 && max_si < 4 && st < 17 && et < 18){
 							max_si++;
 							pst = con.prepareStatement("insert into schedule_interview(email_ifk, mobile_fk, startTime, endTime) values('"+rs1.getString("email")+"','"+rs.getString("mobile")+"','"+st+"','"+et+"')");
 							int ans = pst.executeUpdate();
@@ -86,7 +86,7 @@ public class ScheduleDAO {
 		ArrayList<CandidatePojo>  cc = new ArrayList<CandidatePojo>();
 		CandidatePojo bean;
 		try {
-			pst = con.prepareStatement("select i.Name,r.level,r.result,r.feedback from interviewer i,interview_review r,candidate c where c.mobile = "+phone+" and r.mobile_fk ="+phone+" and i.email = r.email_ifk and c.name=" +c_name);
+			pst = con.prepareStatement("select i.Name,r.level,r.result,r.feedback from interviewer i,interview_review r,candidate c where c.mobile = "+phone+" and r.mobile_fk ="+phone+" and i.email = r.email_ifk and c.name = '"+c_name+"'");
 			System.out.println(pst);
 			rs=pst.executeQuery();
 			} catch (SQLException e) {

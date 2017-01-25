@@ -28,25 +28,17 @@ public class AddCandidateController extends HttpServlet {
 		    //partner_id = result;
 			System.out.println(result);
 			if(result > 0) {
-					String msg = "Created Successfully";
+					String msg = "Record Inserted Successfully";
 					response.sendRedirect("homeView.jsp?msg="+msg);
 					System.out.println("record inserted into db");
 				}
 				else {
 			    	response.sendRedirect("addCandidate.jsp");
 				}
-				System.out.println("pop should be dispalyed");
-				//response.sendRedirect("addPartner.jsp?error='errorissent'");
-				PrintWriter out = response.getWriter();
-				out.println("<script type=\"text/javascript\">");
-				out.println("alert('Partner you added exits! Add a NEW partner');");
-				out.println("location='addPartner.jsp';");
-				out.print("</script>");
 		} catch (NullPointerException e) {
 			System.out.println("null pointer exception");
 		}
 	}	 
-
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
 		try {

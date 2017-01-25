@@ -53,8 +53,8 @@
                 targets: [ 1 ],
                 orderData: [ 1, 0 ]
             }, {
-                targets: [ 8 ],
-                orderData: [ 8, 0 ]
+                targets: [ 4 ],
+                orderData: [ 4, 0 ]
             } ]
         } );
     } );

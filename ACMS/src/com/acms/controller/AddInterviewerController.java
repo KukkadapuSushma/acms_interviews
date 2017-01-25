@@ -26,7 +26,7 @@ public class AddInterviewerController extends HttpServlet {
 		    String error = "Please add again";
 			System.out.println(result);
 			if(result > 0) {
-				String msg = "Created Successfully";
+				String msg = "Record inserted Successfully";
 				response.sendRedirect("homeView.jsp?msg="+msg);
 				System.out.println("record inserted into db");
 				}

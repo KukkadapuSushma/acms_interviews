@@ -35,7 +35,12 @@ body {
     </div>
     <div class="form-group">
       <label for="gender">Gender:</label>
-      <input type="text" class="form-control" name = "gender" id="gender" placeholder="Enter gender of candidate" required>
+      <select class="form-control" style="max-width: 300;" id = "gender" name="gender" required>
+      	<option value="#">Select</option>
+  		<option value="F">Female</option>
+  		<option value="M">Male</option>
+	</select>      
+      <!-- <input type="text" class="form-control" name = "gender" id="gender" placeholder="Enter gender of candidate" required> -->
     </div>
     <div class="form-group">
       <label for="qualification">Qualification:</label>

@@ -71,6 +71,6 @@ li {
 <br>
 <br>
 <br>
-<img src="#" width="140" height="70" alt="Amazon"/>
+<img src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQKc6Vsiy3vmvkSfa0NR3pDO6R3E_DIcygGMSQkAW4DGphvUkm4" width="140" height="70" alt="Amazon"/>
 </body>
 </html>
