@@ -51,7 +51,7 @@ String name = request.getParameter("c_name");
 %>
 <% 
  ScheduleDAO pdao = new ScheduleDAO();
- ArrayList<CandidatePojo> alc1 = pdao.getFeedback(name);
+ ArrayList<CandidatePojo> alc1 = pdao.getFeedbackI(name);
  Iterator<CandidatePojo> itr1 = alc1.iterator();
 %>
 <br>
@@ -62,11 +62,11 @@ String name = request.getParameter("c_name");
 <div class="container">
   <div class = "row">
   <div class="col-sm-6 col-md-8 col-md-offset-2">
-  <div class = "well"><center><h3><font color="red">FeedBack Page of <%=name %></font><h3></center>  
+  <div class = "well"><center><h3><font color="red">FeedBack given by <%=name %></font><h3></center>  
   <table id = "keywords" class="table table-striped">
     <thead>
       <tr>
-        <th>Interviewer</th>
+        <th>Candidate</th>
         <th>Level</th>
         <th>Result</th>
         <th>Feedback</th>

@@ -22,7 +22,7 @@
    </style>
    <%
  ScheduleDAO pdao = new ScheduleDAO();
- ArrayList<CandidatePojo> alcdis = pdao.getAllDistinctCandidates();
+ ArrayList<CandidatePojo> alcdis = pdao.getAllDistinctInterviewers();
  CandidatePojo cb;
  Iterator<CandidatePojo> itr1 = alcdis.iterator(); 
 %>
@@ -40,7 +40,7 @@
   <div class = "well">
 <form method = "post" action = "feedbackView.jsp">
     <div class="form-group">
-      <label for="InterviewId">Candidate Name:</label>
+      <label for="InterviewId">Interviewer Name:</label>
         <center>
     <div class="dropdown">
   <button  class="btn btn-danger dropdown-toggle" type="button" data-toggle="dropdown" style = "position:absolute;top:-25px;">Select<span class="glyphicon glyphicon-download-alt">
@@ -49,7 +49,7 @@
     <% while(itr1.hasNext()) {
     	    cb = itr1.next();
  	%>
-   <li><a href="feedbackView.jsp?c_name=<%= cb.getName()%>" name = c_name value = <%= cb.getName()%> ><%= cb.getName()%></a></li><%} %>
+   <li><a href="feedbackViewI.jsp?c_name=<%= cb.getName()%>" name = c_name value = <%= cb.getName()%> ><%= cb.getName()%></a></li><%} %>
   </ul>
 </div>
  </center>

@@ -82,11 +82,11 @@ public class ScheduleDAO {
 		return  cc;
 	}
 
-	public ArrayList<CandidatePojo> getFeedback(String c_name, String phone) throws SQLException{
+	public ArrayList<CandidatePojo> getFeedback(String c_name) throws SQLException{
 		ArrayList<CandidatePojo>  cc = new ArrayList<CandidatePojo>();
 		CandidatePojo bean;
 		try {
-			pst = con.prepareStatement("select i.Name,r.level,r.result,r.feedback from interviewer i,interview_review r,candidate c where c.mobile = "+phone+" and r.mobile_fk ="+phone+" and i.email = r.email_ifk and c.name = '"+c_name+"'");
+			pst = con.prepareStatement("select i.Name,r.level,r.result,r.feedback from interviewer i,interview_review r,candidate c where c.mobile = r.mobile_fk and i.email = r.email_ifk and c.name = '"+c_name+"' order by level");
 			System.out.println(pst);
 			rs=pst.executeQuery();
 			} catch (SQLException e) {
@@ -96,6 +96,29 @@ public class ScheduleDAO {
 			}
 		 while(rs.next()) {
 			 String name = rs.getString("i.name");
+			 String level = rs.getString("r.level");	
+			 String result = rs.getString("r.result");
+			 String feedback = rs.getString("r.feedback");
+			 bean = new CandidatePojo(name,level,result,feedback,"",0);
+			 cc.add(bean);
+		 }	 
+		return  cc;
+	}
+	
+	public ArrayList<CandidatePojo> getFeedbackI(String i_name) throws SQLException{
+		ArrayList<CandidatePojo>  cc = new ArrayList<CandidatePojo>();
+		CandidatePojo bean;
+		try {
+			pst = con.prepareStatement("select c.Name,r.level,r.result,r.feedback from interviewer i,interview_review r,candidate c where c.mobile = r.mobile_fk and i.email = r.email_ifk and i.name = '"+i_name+"' order by level");
+			System.out.println(pst);
+			rs=pst.executeQuery();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			} catch (NullPointerException e){
+				return null;
+			}
+		 while(rs.next()) {
+			 String name = rs.getString("c.Name");
 			 String level = rs.getString("r.level");	
 			 String result = rs.getString("r.result");
 			 String feedback = rs.getString("r.feedback");
@@ -131,4 +154,32 @@ public class ScheduleDAO {
 		
 		return result;
 	}
+	
+	public ArrayList<CandidatePojo> getAllDistinctCandidates() throws SQLException{
+		ArrayList<CandidatePojo>  cc = new ArrayList<CandidatePojo>();
+		CandidatePojo bean;
+	    pst = con.prepareStatement("select Distinct(name) from candidate order by name");
+	    System.out.println(pst);
+	    ResultSet rs = pst.executeQuery();
+	    while(rs.next()) {
+			 String name = rs.getString(1);
+			 bean = new CandidatePojo(name,"","","","",0);
+			 cc.add(bean);
+		 }	 		
+	    return cc;
+}
+	
+	public ArrayList<CandidatePojo> getAllDistinctInterviewers() throws SQLException{
+		ArrayList<CandidatePojo>  cc = new ArrayList<CandidatePojo>();
+		CandidatePojo bean;
+	    pst = con.prepareStatement("select Distinct(name) from interviewer order by name");
+	    System.out.println(pst);
+	    ResultSet rs = pst.executeQuery();
+	    while(rs.next()) {
+			 String name = rs.getString(1);
+			 bean = new CandidatePojo(name,"","","","",0);
+			 cc.add(bean);
+		 }	 		
+	    return cc;
+}
 }
