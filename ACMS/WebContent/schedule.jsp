@@ -10,43 +10,37 @@
   <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-    <script src = https://cdn.datatables.net/1.10.12/css/jquery.dataTables.min.css> </script>
-    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
-    <script src = "https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <link rel="shortcut icon" href="images/icons/favicon.ico">
-    <link rel="apple-touch-icon" href="images/icons/favicon.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="images/icons/favicon-72x72.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="images/icons/favicon-114x114.png">
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
-<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+       <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+     
+     <link rel="stylesheet" type="text/css" href="style.css">
+      <link rel="stylesheet" type="text/css" href="http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.0/css/jquery.dataTables.css">
+      <link rel="stylesheet" type="text/css" href="http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.0/css/jquery.dataTables_themeroller.css">
+        <script type="text/javascript" charset="utf8" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.1.min.js"></script>
+        <script type="text/javascript" charset="utf8" src="http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.0/jquery.dataTables.min.js"></script>
+    
+  <script>
+  $(document).ready(function() {
+      $('#example').DataTable( {
+          columnDefs: [ {
+              targets: [ 5 ],
+              orderData: [ 0, 1 ]
+          }, {
+              targets: [ 1 ],
+              orderData: [ 1, 0 ]
+          }, {
+              targets: [ 4 ],
+              orderData: [ 4, 0 ]
+          } ]
+      } );
+  } );
   
-    <script>
-    $(document).ready(function() {
-        $('#keywords').DataTable( {
-            columnDefs: [ {
-                targets: [ 0 ],
-                orderData: [ 0, 1 ]
-            }, {
-                targets: [ 1 ],
-                orderData: [ 1, 0 ]
-            }, {
-                targets: [ 5 ],
-                orderData: [ 5, 0 ]
-            } ]
-        } );
-    } );
-    </script> 
-    <style>
+ /*  $(document).ready(function() {
+	    $('#example').dataTable({"sPaginationType": "full_numbers"});
+	}); */
+  </script>
+  <style>
    body {
     background-image: url("bg.gif");
    }
@@ -65,9 +59,9 @@
 <br>
 <div class="container">
   <div class = "row">
-  <div class="col-sm-6 col-md-8 col-md-offset-2">
+  <div class="col-sm-6 col-md-9  col-md-offset-1">
   <div class = "well"><center><h3>Schedule for today!<h3></center>  
-  <table id = "keywords" class="table table-striped">
+  <table id = "example" class="dataTable" >
     <thead>
       <tr>
         <th>Time Slot</th>
