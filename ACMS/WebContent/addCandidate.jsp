@@ -1,3 +1,12 @@
+<%
+String usern = (String)session.getAttribute("U");
+if(usern == null){
+	response.sendRedirect("loginView.jsp?error= Please Login");
+}
+String error = request.getParameter("error");
+String msg = request.getParameter("msg");
+%>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,11 +29,15 @@ body {
 <br>
 <br>
 <br>
+
+ <% if(msg != null){
+	   %> <center><h3><font color = red><%=msg%></font></h3></center> 
+   <%} %>
 <br>
 <br>
 <div class="container">
 <div class = "row">
-  <div class="col-sm-6 col-md-4 col-md-offset-4">
+  <div class="col-sm-6 col-md-9  col-md-offset-1">
   <div class = "well">
   <center><h3>Candidate Details</h3></center>
   <br>
@@ -36,11 +49,10 @@ body {
     <div class="form-group">
       <label for="gender">Gender:</label>
       <select class="form-control" style="max-width: 300;" id = "gender" name="gender" required>
-      	<option value="#">Select</option>
+      	<option value="" disabled selected>Select</option>
   		<option value="F">Female</option>
   		<option value="M">Male</option>
 	</select>      
-      <!-- <input type="text" class="form-control" name = "gender" id="gender" placeholder="Enter gender of candidate" required> -->
     </div>
     <div class="form-group">
       <label for="qualification">Qualification:</label>

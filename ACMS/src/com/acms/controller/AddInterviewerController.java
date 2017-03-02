@@ -26,19 +26,14 @@ public class AddInterviewerController extends HttpServlet {
 		    String error = "Please add again";
 			System.out.println(result);
 			if(result > 0) {
-				String msg = "Record inserted Successfully";
-				response.sendRedirect("homeView.jsp?msg="+msg);
+				String msg = "Interviewer details added successfully";
+				response.sendRedirect("addInterviewer.jsp?msg="+msg);
 				System.out.println("record inserted into db");
 				}
 				else {
+					String msg = "Please enter the details again!!";
 			    	response.sendRedirect("addInterviewer.jsp?error="+error);
 				}
-				System.out.println("pop should be dispalyed");
-				PrintWriter out = response.getWriter();
-				out.println("<script type=\"text/javascript\">");
-				out.println("alert('Partner you added exits! Add a NEW partner');");
-				out.println("location='addPartner.jsp';");
-				out.print("</script>");
 		} catch (NullPointerException e) {
 			System.out.println("null pointer exception");
 		} catch (ClassNotFoundException e) {

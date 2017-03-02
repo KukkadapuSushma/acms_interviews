@@ -43,7 +43,6 @@ li {
 <br>
 <br>
 <br>
-<br>
 <h4>
 <ul id="menu">
   <li><a href="homeView.jsp" target="frame_b">Home</a></li><br>

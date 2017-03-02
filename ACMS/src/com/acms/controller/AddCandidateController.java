@@ -28,12 +28,13 @@ public class AddCandidateController extends HttpServlet {
 		    //partner_id = result;
 			System.out.println(result);
 			if(result > 0) {
-					String msg = "Record Inserted Successfully";
-					response.sendRedirect("homeView.jsp?msg="+msg);
+					String msg = "Candidate details added successfully";
+					response.sendRedirect("addCandidate.jsp?msg="+msg);
 					System.out.println("record inserted into db");
 				}
 				else {
-			    	response.sendRedirect("addCandidate.jsp");
+					String msg = "Please enter the details again!!";
+			    	response.sendRedirect("addCandidate.jsp?msg="+msg);
 				}
 		} catch (NullPointerException e) {
 			System.out.println("null pointer exception");

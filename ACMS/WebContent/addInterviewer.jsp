@@ -1,3 +1,11 @@
+<%
+String usern = (String)session.getAttribute("U");
+if(usern == null){
+	response.sendRedirect("loginView.jsp?error= Please Login");
+}
+String msg = request.getParameter("msg");
+%>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,11 +25,15 @@ body {
 <br>
 <br>
 <br>
+<% if(msg != null){
+	   %> <center><h3><font color = red><%=msg%></font></h3></center> 
+   <%} %>
+
 <br>
 <br>
 <div class="container">
 <div class = "row">
-  <div class="col-sm-6 col-md-4 col-md-offset-4">
+  <div class="col-sm-6 col-md-9  col-md-offset-1">
   <div class = "well">
   <center><h3>Interviewer Information</h3></center>
   <br>
@@ -33,14 +45,13 @@ body {
     <div class="form-group">
       <label for="level">Level:</label>
          <select class="form-control" style="max-width: 300;" id = "level" name="level" required>
-      	<option value="#">Select</option>
+      	<option value="" disabled selected>Select</option>
   		<option value="1">1</option>
   		<option value="2">2</option>
   		<option value="3">3</option>
   		<option value="4">4</option>
 	</select>      
-<!--       <input type="text" class="form-control" name="level" id="level" placeholder="Enter level of Interviewer" required> -->
-    </div>
+   </div>
     <div class="form-group">
       <label for="address">Phone number:</label>
       <input type="text" data-error = "Please enter a correct 10 digit number" class="form-control" name="phone" id="phone" pattern = "^[789]\d{9}$" placeholder="Enter phone number of Interviewer" required>

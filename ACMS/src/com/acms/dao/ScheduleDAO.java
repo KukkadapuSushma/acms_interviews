@@ -5,14 +5,15 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.List;
 
-import com.acms.pojo.CandidatePojo;
+import com.acms.pojo.*;
 
 public class ScheduleDAO {
 	Connection con;
 	ConnectionDAO cdao;
-	PreparedStatement pst,pst1;
-	ResultSet rs,rs1;
+	PreparedStatement pst,pst1,pst2,pst3,pst4,pst5,pst6,pst7;
+	ResultSet rs,rs1,rs2,rs4,rs5,rs6;
 
 	public ScheduleDAO() throws ClassNotFoundException, SQLException {
 		cdao = new ConnectionDAO();
@@ -20,6 +21,91 @@ public class ScheduleDAO {
 	}
 
 	public int createSchedule() {
+		// TODO Auto-generated method stub
+		int result = 1;
+		try {			
+			int j;
+			pst =  con.prepareStatement("select name,mobile,level from candidate");
+			rs=pst.executeQuery();
+			int k =1;
+			System.out.println("please come");
+			while(rs.next()){
+				if(k<100){
+						if(k%4 == 0){
+							j = 4;
+						} 
+						else{ 
+							j = k%4; 
+						} 
+						int slot = j;
+						System.out.println(slot);
+						while(slot<10){ 
+							
+							pst1 = con.prepareStatement("select Name,email,level from interviewer order by level");
+							rs1 = pst1.executeQuery();
+							
+							while(rs1.next()){
+								String name = rs.getString("name");
+								System.out.println(name);
+								pst4 = con.prepareStatement("select level,name from candidate where name = '"+name+"'");
+								rs4 = pst4.executeQuery();
+								String interviewer = rs1.getString("Name");
+								pst6 = con.prepareStatement("select var from interviewer where name = '"+interviewer+"' " );
+								rs5 = pst6.executeQuery();
+								while(rs4.next()){
+									
+									while(rs5.next()){
+										if(rs1.getInt("level") >= rs4.getInt("level") && rs.getInt("level") < 4 && rs5.getInt("var") < 5){
+											pst2 = con.prepareStatement("insert into schedule_interview(email_ifk, mobile_fk,slot) values('"+rs1.getString("email")+"','"+rs.getString("mobile")+"','"+(slot++)+"')");
+											int ans = pst2.executeUpdate();
+											if(ans >0){
+												pst3 = con.prepareStatement ("update candidate set level = level+1 where name = ?"); 
+												pst3.setString(1, name);
+												pst3.executeUpdate();
+												pst5 = con.prepareStatement("update interviewer1 set var = var + 1 where name = ?");
+												pst5.setString(1, rs1.getString("Name"));
+												pst5.executeUpdate();
+											}								
+									  }	
+									}
+								}	
+							}
+								slot = slot + 1;
+						}
+					}
+					k=k+1;
+				}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return result;
+	}
+	
+	public  ArrayList<interviewPojo> findInterviewes() throws SQLException{
+		ArrayList<interviewPojo> listOfinterviewes = new ArrayList<interviewPojo>();
+		
+
+				pst7 = con.prepareStatement("select s.interview_id,i.Name,c.name,s.slot,c.level from schedule_interview s,candidate c,interviewer i where s.email_ifk = i.email and c.mobile = s.mobile_fk");
+				rs6 = pst7.executeQuery();
+
+				
+				while(rs6.next())
+		        {
+					interviewPojo userpojo  = new interviewPojo();
+					userpojo.setid(rs6.getInt("s.interview_id"));
+					userpojo.setcandidate(rs6.getString("c.name"));
+					userpojo.setinterviewer(rs6.getString("i.Name"));
+					userpojo.setlevel(rs6.getInt("c.level"));
+					userpojo.setslot(rs6.getInt("s.slot"));
+					listOfinterviewes.add(userpojo);
+		        }
+		
+		return listOfinterviewes;
+	
+}
+	
+/*	public int createSchedule() {
 		// TODO Auto-generated method stub
 		int result = 0;
 		try {
@@ -58,7 +144,7 @@ public class ScheduleDAO {
 		System.out.println(result);
 		return result;
 	}
-	
+*/	
 	public ArrayList<CandidatePojo> getSchedule() throws SQLException{
 		ArrayList<CandidatePojo>  cc = new ArrayList<CandidatePojo>();
 		CandidatePojo bean;

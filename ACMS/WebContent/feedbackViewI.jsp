@@ -78,10 +78,10 @@ String name = request.getParameter("c_name");
  <% while(itr1.hasNext()) {
 	 			CandidatePojo cb = itr1.next();
                 out.print("<tr>");
-                out.print("<td>" + cb.getName());
-                out.print("<td>" + cb.getGender());
-                out.print("<td>" + cb.getQuali());
-                out.print("<td>" + cb.getEmail());
+                out.println("<td><a href=\"feedbackView.jsp?c_name="+cb.getName()+"\">"+cb.getName()+"</a></td>");
+                out.print("<td>" + cb.getGender()+"</td>");
+                out.print("<td>" + cb.getQuali()+"</td>");
+                out.print("<td>" + cb.getEmail()+"</td>");
                 out.print("</tr>");
    }
 %>   
