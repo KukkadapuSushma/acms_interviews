@@ -6,6 +6,7 @@ public class interviewPojo {
 	public String candidate;
 	public int slot;
 	public int level;
+	public String slots;
 	
 	public String getinterviewer() {
 		return interviewer;
@@ -34,12 +35,16 @@ public class interviewPojo {
 	public void setslot(int slot) {
 		this.slot = slot;
 	}
-	
+	public String getslots() {
+		return slots;
+	}
+	public void setslots(String slots) {
+		this.slots = slots;
+	}
 	public int getid() {
 		return id;
 	}
 	public void setid(int id) {
 		this.id = id;
 	}
-
 }

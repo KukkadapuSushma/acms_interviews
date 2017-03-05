@@ -78,4 +78,24 @@
     <servlet-name>LogoutController</servlet-name>
     <url-pattern>/LogoutController</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>CandidatesScheduled</display-name>
+    <servlet-name>CandidatesScheduled</servlet-name>
+    <servlet-class>com.acms.controller.CandidatesScheduled</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>CandidatesScheduled</servlet-name>
+    <url-pattern>/CandidatesScheduled</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>SelectedInterviewersController</display-name>
+    <servlet-name>SelectedInterviewersController</servlet-name>
+    <servlet-class>com.acms.controller.SelectedInterviewersController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SelectedInterviewersController</servlet-name>
+    <url-pattern>/SelectedInterviewersController</url-pattern>
+  </servlet-mapping>
 </web-app>

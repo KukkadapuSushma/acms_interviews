@@ -48,7 +48,7 @@ String msg = request.getParameter("msg");
 <br>
 <br>
 <br>
- <form role="form" method = "post" action = "CreateScheduleController">
+ <form role="form" method = "post" action = "scheduleView.jsp">
    <center><button type="submit" class="btn btn-danger">Create Schedule</button></center>
   </form>
 

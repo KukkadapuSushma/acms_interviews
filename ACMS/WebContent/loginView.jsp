@@ -65,7 +65,6 @@ String error = request.getParameter("error");
       <div class="item active">
         <img src="interview4.gif" width="460" height="345">
         <div class="carousel-caption">
-          <h3>Create an account</h3>
         </div>
       </div>
     

@@ -1,5 +1,6 @@
 package com.acms.dao;
 
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -35,4 +36,29 @@ public class InterviewerDAO {
 		return result;
 	}
 
-}
+	public InterviewerPojo getInterviewerDetails(String name) throws SQLException {
+		pst = con.prepareStatement("select * from interviewer where name = ?");
+		pst.setString(1, name);
+		ResultSet rs = pst.executeQuery();
+		    InterviewerPojo tbean = null;
+		    if(rs.next()) {
+		        tbean = new InterviewerPojo(rs.getString(1),rs.getInt(4),rs.getString(3),rs.getString(5));
+	        } 
+		    return tbean;
+		}
+
+	public int scheduleInterviewer(String name,int level) throws SQLException, ClassNotFoundException, IOException{
+		int result = 0;
+		try {
+			pst =  con.prepareStatement("insert into interviewer1 values('"+name+"','"+level+"','"+1+"')");
+			result = pst.executeUpdate();
+			System.out.println(pst);
+		} catch (SQLException e) {
+			System.out.println("in exception");
+			e.printStackTrace();
+			return result;
+		}
+		return result;			
+	}
+	
+	}

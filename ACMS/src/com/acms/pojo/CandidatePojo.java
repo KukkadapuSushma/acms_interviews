@@ -23,13 +23,7 @@ public class CandidatePojo {
 		this.Email = Email;
 		this.level = level;
 	}
-	/*public PartnerPojo(int partner_id){
-		super();
-		this.partner_id = partner_id;
-	}
-	public long getPartner_id() {
-		return partner_id;
-	}*/
+	
 	public String getName() {
 		return Name;
 	}

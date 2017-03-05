@@ -2,6 +2,7 @@ package com.acms.dao;
 
 import com.acms.pojo.CandidatePojo;
 
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -33,5 +34,29 @@ public class CandidateDAO {
 		}
 		return result;
 	}
-
+	
+	public CandidatePojo getTraineeDetails(String name) throws SQLException {
+	    pst = con.prepareStatement("select * from candidate where name = ?");
+	    pst.setString(1, name);
+	    ResultSet rs = pst.executeQuery();
+	    CandidatePojo tbean = null;
+	    if(rs.next()) {
+	        tbean = new CandidatePojo(rs.getString(1),rs.getString(2),rs.getString(3),rs.getString(4),rs.getString(5),rs.getInt(6));
+        } 
+	    return tbean;
+	}
+	
+	public int scheduleCandidate(String name,int level) throws SQLException, ClassNotFoundException, IOException{
+		int result = 0;
+		try {
+			pst =  con.prepareStatement("insert into candidate1 values('"+name+"','"+level+"')");
+			result = pst.executeUpdate();
+			System.out.println(pst);
+		} catch (SQLException e) {
+			System.out.println("in exception");
+			e.printStackTrace();
+			return result;
+		}
+		return result;			
+	}
 }

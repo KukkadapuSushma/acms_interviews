@@ -35,7 +35,7 @@ String name = request.getParameter("int_name");
   <div class = "well">
 <form method = "post" action = "feedbackController">
     <div class="form-group">
-      <label for="NameofCandidate">Feedback about:</label>
+      <label for="NameofCandidate">Feedback by:</label>
       <input class="form-control" id="Cand_name" value = <%=name %> type="text">
     </div>
     <div class="form-group">
@@ -56,38 +56,5 @@ String name = request.getParameter("int_name");
 </div>
 </div>
 </div>
-
-<%-- <div class="container">
-<div class = "row">
-  <div class="col-sm-6 col-md-4 col-md-offset-4">
-  <div class = "well">
-<form method = "post" action = "feedbackController">
-    <div class="form-group" >
-      <label for="InterviewId">Interview Id:</label>
-      <input class="form-control" name = "i_name" id="i_name" value = <%=id %>  type="text">
-    </div>
-    <div class="form-group">
-      <label for="comment">Feedback:</label>
-      <textarea class="form-control" rows="10" name = "feed" id="comment"></textarea>
-    </div>
-    
-            <div class="form-group">
-                 <label class="col-xs-3 control-label">Result: </label>
-                <div class="col-xs-5">
-                    <select class="form-control"   style="max-width: 300;" name="result" required>
-                    <option value="">Select</option>
-                        <option value="Selected">Selected</option>
-                        <option value="Rejected">Rejected</option>
-               </select>
-               
-               <div class = "help-block with-errors"></div>
-            </div>
-            </div>
-            
- <center><button type="submit" class="btn btn-danger">Submit</button></center>
- </form>
-</div>
-</div>
-</div> --%>
 </body>
 </html>
