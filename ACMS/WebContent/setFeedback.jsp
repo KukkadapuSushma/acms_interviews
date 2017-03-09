@@ -1,5 +1,6 @@
 <% String id = request.getParameter("interview_id"); 
 String name = request.getParameter("int_name"); 
+String cname = request.getParameter("can_name"); 
 %>
 <!DOCTYPE html>
 <html lang="en">
@@ -35,8 +36,11 @@ String name = request.getParameter("int_name");
   <div class = "well">
 <form method = "post" action = "feedbackController">
     <div class="form-group">
-      <label for="NameofCandidate">Feedback by:</label>
-      <input class="form-control" id="Cand_name" value = <%=name %> type="text">
+      <label for="NameofCandidate">Feedback given by:</label>
+      <input class="form-control" id="int_name" value = <%=name %> type="text">
+      &nbsp;&nbsp;
+      <label for="NameofCandidate">Feedback given to:</label>
+      <input class="form-control" id="Cand_name" value = <%=cname %> type="text"> 
     </div>
     <div class="form-group">
       <label for="comment">Feedback:</label>

@@ -41,8 +41,31 @@ CREATE TABLE `candidate` (
 
 LOCK TABLES `candidate` WRITE;
 /*!40000 ALTER TABLE `candidate` DISABLE KEYS */;
-INSERT INTO `candidate` VALUES ('Shashank','M','shashank@gmail.com','212121212121','PG',4),('Haritha','F','haritha@gmail.com','9000928928','Btech',4),('Kumar','M','kumar3165@gmail.com','9391181566','PG',4),('Preetha','F','preetha@gmail.com','9399973514','PG',4),('Mayank','M','mayank@gmail.com','9494234630','Btech',4),('Sushma','F','sush@gmail.com','9701387079','Btech',4);
+INSERT INTO `candidate` VALUES ('Prasanna','Female','prasu@yahoo.com','7123089760','PG',2),('Harshi','Male','harshi@gmail.com','8008962436','Btech',1),('Raju','Male','raju123@ymail.com','8282128212','MBA',3),('Damini','Female','daminisatya@gmail.com','8989898989','Btech',2),('Haritha','Female','haritha@gmail.com','9000928928','Btech',2),('Vasanth','Male','vasanth@gmail.com','9191919191','Btech',1),('Kumar','Male','kumar3165@gmail.com','9391181566','PG',1),('Kavii','Female','ka@gmail.com','9399973512','Mtech',2),('Preetha','Female','preetha@gmail.com','9399973514','PG',2),('Mayank','Male','mayank@gmail.com','9494234630','Btech',1),('Sushma','Female','sush@gmail.com','9701387079','Btech',2),('Rani','Female','rani@yahoo.com','9898989898','PG',2),('Rahul','Male','rahul@gmail.com','9900990090','PG',1),('Vipin','Male','vipin@gmail.com','9988998899','Btech',1);
 /*!40000 ALTER TABLE `candidate` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `candidate1`
+--
+
+DROP TABLE IF EXISTS `candidate1`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `candidate1` (
+  `name` varchar(20) NOT NULL,
+  `level` int(11) DEFAULT NULL,
+  PRIMARY KEY (`name`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `candidate1`
+--
+
+LOCK TABLES `candidate1` WRITE;
+/*!40000 ALTER TABLE `candidate1` DISABLE KEYS */;
+/*!40000 ALTER TABLE `candidate1` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -71,7 +94,7 @@ CREATE TABLE `interview_review` (
 
 LOCK TABLES `interview_review` WRITE;
 /*!40000 ALTER TABLE `interview_review` DISABLE KEYS */;
-INSERT INTO `interview_review` VALUES ('datladivyakrishna1996@gmail.com','9391181566',1,'Rejected','\"Good Technical Skills\"'),('datladivyakrishna1996@gmail.com','9399973514',1,'Rejected','good'),('datladivyakrishna1996@gmail.com','9494234630',1,'Rejected','bad performance'),('divya@gmail.com','9000928928',3,'Selected','great'),('s@r.com','9000928928',4,'Selected','good performance');
+INSERT INTO `interview_review` VALUES ('anuranjan@gmail.com','7123089760',2,'Selected','Good'),('anuranjan@gmail.com','8989898989',2,'Rejected','Bad Performance'),('datladivyakrishna1996@gmail.com','8989898989',1,'Selected','Good communication skills'),('datladivyakrishna1996@gmail.com','9000928928',2,'Selected','Have to improve'),('datladivyakrishna1996@gmail.com','9191919191',1,'Rejected','Excellent'),('datladivyakrishna1996@gmail.com','9399973512',1,'Rejected','Very bad performance'),('kavith@g.com','9000928928',0,'Rejected','Core subjects knowledge is weak'),('raghuram@hotmail.com','8989898989',2,'Selected','Good');
 /*!40000 ALTER TABLE `interview_review` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -87,6 +110,7 @@ CREATE TABLE `interviewer` (
   `email` varchar(255) NOT NULL,
   `mobile` varchar(255) NOT NULL,
   `level` int(11) NOT NULL,
+  `var` int(11) DEFAULT '1',
   PRIMARY KEY (`email`),
   UNIQUE KEY `mobile` (`mobile`),
   UNIQUE KEY `email` (`email`)
@@ -99,8 +123,32 @@ CREATE TABLE `interviewer` (
 
 LOCK TABLES `interviewer` WRITE;
 /*!40000 ALTER TABLE `interviewer` DISABLE KEYS */;
-INSERT INTO `interviewer` VALUES ('Kavitha','datladivyakrishna1996@gmail.com','9963027712',1),('Datla Divya Krishna','divya@gmail.com','999999999',2),('ganesh','kavith@g.com','1234567890',1),('Kavi','s@r.com','9876543211',3),('sathya','sathya@gmail.com','9885885033',4);
+INSERT INTO `interviewer` VALUES ('Anuranjan','anuranjan@gmail.com','9797979797',3,1),('Kavitha','datladivyakrishna1996@gmail.com','9963027712',1,1),('Datla Divya Krishna','divya@gmail.com','999999999',2,1),('ganesh','kavith@g.com','1234567890',1,1),('Lohith','lohith@gmail.com','9845880616',2,1),('Radhika','radhika@yahoo.com','8143374403',1,1),('Raghuram','raghuram@hotmail.com','8703212345',2,1),('Raja','raja12@yahoo.com','8712345678',3,1),('Kavi','s@r.com','9876543211',3,1),('sathya','sathya@gmail.com','9885885033',4,1),('Sunitha','sunitha@gmail.com','9090909090',2,1),('Sush','sush@gmail.com','9701387069',3,1);
 /*!40000 ALTER TABLE `interviewer` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `interviewer1`
+--
+
+DROP TABLE IF EXISTS `interviewer1`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `interviewer1` (
+  `name` varchar(20) NOT NULL,
+  `level` int(11) DEFAULT NULL,
+  `var` int(11) DEFAULT NULL,
+  PRIMARY KEY (`name`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `interviewer1`
+--
+
+LOCK TABLES `interviewer1` WRITE;
+/*!40000 ALTER TABLE `interviewer1` DISABLE KEYS */;
+/*!40000 ALTER TABLE `interviewer1` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -137,15 +185,14 @@ CREATE TABLE `schedule_interview` (
   `interview_id` bigint(20) NOT NULL AUTO_INCREMENT,
   `email_ifk` varchar(255) NOT NULL,
   `mobile_fk` varchar(255) NOT NULL,
-  `startTime` varchar(8) NOT NULL,
-  `endTime` varchar(8) NOT NULL,
+  `slot` int(11) DEFAULT NULL,
   PRIMARY KEY (`interview_id`),
-  UNIQUE KEY `email_ifk` (`email_ifk`,`startTime`,`endTime`,`mobile_fk`),
-  UNIQUE KEY `email_ifk_2` (`email_ifk`,`startTime`,`endTime`),
-  UNIQUE KEY `mobile_fk` (`mobile_fk`,`startTime`,`endTime`),
+  UNIQUE KEY `email_ifk` (`email_ifk`,`mobile_fk`),
+  UNIQUE KEY `email_ifk_2` (`email_ifk`),
+  UNIQUE KEY `mobile_fk` (`mobile_fk`),
   CONSTRAINT `schedule_interview_ibfk_1` FOREIGN KEY (`email_ifk`) REFERENCES `interviewer` (`email`),
   CONSTRAINT `schedule_interview_ibfk_2` FOREIGN KEY (`mobile_fk`) REFERENCES `candidate` (`mobile`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -154,8 +201,56 @@ CREATE TABLE `schedule_interview` (
 
 LOCK TABLES `schedule_interview` WRITE;
 /*!40000 ALTER TABLE `schedule_interview` DISABLE KEYS */;
-INSERT INTO `schedule_interview` VALUES (1,'s@r.com','9000928928','10','11'),(2,'s@r.com','9391181566','11','12'),(3,'s@r.com','9399973514','12','13'),(4,'s@r.com','9494234630','14','15'),(5,'sathya@gmail.com','9701387079','15','16');
 /*!40000 ALTER TABLE `schedule_interview` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `scheduler`
+--
+
+DROP TABLE IF EXISTS `scheduler`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `scheduler` (
+  `candidate` varchar(20) DEFAULT NULL,
+  `interviewer` varchar(20) DEFAULT NULL,
+  `level` int(11) DEFAULT NULL,
+  `slot` int(11) DEFAULT NULL,
+  `interview_id` int(11) NOT NULL AUTO_INCREMENT,
+  PRIMARY KEY (`interview_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `scheduler`
+--
+
+LOCK TABLES `scheduler` WRITE;
+/*!40000 ALTER TABLE `scheduler` DISABLE KEYS */;
+/*!40000 ALTER TABLE `scheduler` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `slots`
+--
+
+DROP TABLE IF EXISTS `slots`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `slots` (
+  `slot` int(11) DEFAULT NULL,
+  `time` varchar(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `slots`
+--
+
+LOCK TABLES `slots` WRITE;
+/*!40000 ALTER TABLE `slots` DISABLE KEYS */;
+INSERT INTO `slots` VALUES (1,'09-10'),(2,'10-11'),(3,'11-12'),(4,'12-13'),(5,'14-15'),(6,'15-16'),(7,'16-17');
+/*!40000 ALTER TABLE `slots` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -167,4 +262,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-01-06 21:54:30
+-- Dump completed on 2017-03-06 21:22:19

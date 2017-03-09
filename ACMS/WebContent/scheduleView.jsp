@@ -4,6 +4,14 @@
 <%@page import="java.net.URLDecoder"%>
 <%@page import = "com.acms.dao.ScheduleDAO"%>
 <%@page import = "com.acms.pojo.*"%>
+<%
+String usern = (String)session.getAttribute("U");
+if(usern == null){
+	response.sendRedirect("loginView.jsp?error= Please Login");
+}
+String error = request.getParameter("error");
+String msg = request.getParameter("msg");
+%>
 
 
 <html>
@@ -79,6 +87,10 @@
  
 </head>
 <body>
+<% if(msg != null){
+	   %> <center><h3><font color = red><%=msg%></font></h3></center> 
+   <%} %>
+
  <div class="well">
  <ul class="nav nav-tabs"  id="guide-tabs">
     <li class="active"><a href="#tabs-1" data-toggle="tab">Select Candidates<i class="fa"></i></a></li>

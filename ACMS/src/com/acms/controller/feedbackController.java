@@ -22,7 +22,7 @@ public class feedbackController extends HttpServlet {
 			int result = cdao.setFeedback(i_id,feed,res);
 			System.out.println(result);
 			if(result > 0) {
-					String msg = "Created Successfully";
+					String msg = "Feedback Recorded!!";
 					response.sendRedirect("schedule.jsp?msg="+msg);
 					System.out.println("record inserted into db");
 				}

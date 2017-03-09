@@ -2,6 +2,14 @@
 <%@page import = "java.util.Iterator" %>
 <%@page import = "java.util.ArrayList" %>
 <%@page import = "com.acms.dao.ScheduleDAO"%>
+<%
+String usern = (String)session.getAttribute("U");
+if(usern == null){
+	response.sendRedirect("loginView.jsp?error= Please Login");
+}
+String error = request.getParameter("error");
+String msg = request.getParameter("msg");
+%>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -61,6 +69,10 @@
 <br>
 <br>
 <br>
+<% if(msg != null){
+	   %> <center><h3><font color = red><%=msg%></font></h3></center> 
+   <%} %>
+
 <br>
 <br>
 <div class="container">
@@ -92,6 +104,7 @@
                	<td>
       			<form action="setFeedback.jsp" method="post">
       			<input type="hidden" value="<%=usrpojo.getinterviewer()%>" name="int_name">
+      			<input type="hidden" value="<%=usrpojo.getcandidate()%>" name="can_name">
       			<input type="hidden" value="<%=usrpojo.getid() %>" name="interview_id">
       			<button class = "btn btn-danger" id="myBtn" >Feedback <span class="glyphicon glyphicon-envelope"></span></button>
       			</form>

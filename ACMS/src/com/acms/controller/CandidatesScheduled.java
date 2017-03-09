@@ -35,7 +35,8 @@ public class CandidatesScheduled extends HttpServlet {
 					System.out.println("inserted to can1"+check[i]);
 					}
 				}
-			response.sendRedirect("scheduleView.jsp");
+			String msg = "Candidates Selected for Scheduling!!";
+			response.sendRedirect("scheduleView.jsp?msg="+msg);
 		}catch (NullPointerException e) {
 			 out.println("<script type = \"text/javascript\">");
 			 out.println("alert('No Candidates are selected');");

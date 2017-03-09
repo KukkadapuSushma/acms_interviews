@@ -50,8 +50,8 @@ body {
       <label for="gender">Gender:</label>
       <select class="form-control" style="max-width: 300;" id = "gender" name="gender" required>
       	<option value="" disabled selected>Select</option>
-  		<option value="F">Female</option>
-  		<option value="M">Male</option>
+  		<option value="Female">Female</option>
+  		<option value="Male">Male</option>
 	</select>      
     </div>
     <div class="form-group">

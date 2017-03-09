@@ -37,12 +37,12 @@ public class SelectedInterviewersController extends HttpServlet {
 				int result = cdao.createSchedule();
 				System.out.println(result);
 				if(result > 0) {
-						String msg = "Created Successfully";
-						response.sendRedirect("schedule.jsp?msg="+msg);
+						response.sendRedirect("schedule.jsp");
 						System.out.println("record inserted into db");
 					}
 					else {
-				    	response.sendRedirect("homeView.jsp");
+						String msg = "Please select interviewers again.";
+				    	response.sendRedirect("homeView.jsp?msg="+msg);
 					}
 					
 			} catch (NullPointerException e) {
