@@ -41,9 +41,8 @@ public class LoginController extends HttpServlet {
 			//redirect control to next page based on decision
 				if(result){
 					//String role = adao.getrole(user,password);
-					//System.out.println("this is role" + role);
 					//session.setAttribute("role",role);
-					//System.out.println(role+"role is this");
+					int res = adao.truncateTables();
 					RequestDispatcher rd = request.getRequestDispatcher("mainView.jsp");
 					rd.forward(request, response);
 				}

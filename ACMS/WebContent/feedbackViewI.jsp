@@ -47,7 +47,7 @@
 </head>
 <body>
 <%
-String name = request.getParameter("c_name");
+String name = request.getParameter("i_name");
 %>
 <% 
  ScheduleDAO pdao = new ScheduleDAO();
@@ -66,6 +66,7 @@ String name = request.getParameter("c_name");
   <table id = "keywords" class="table table-striped">
     <thead>
       <tr>
+      	<th>Date</th>
         <th>Candidate</th>
         <th>Level</th>
         <th>Result</th>
@@ -78,6 +79,7 @@ String name = request.getParameter("c_name");
  <% while(itr1.hasNext()) {
 	 			CandidatePojo cb = itr1.next();
                 out.print("<tr>");
+                out.print("<td>" + cb.getPhone()+"</td>");
                 out.println("<td><a href=\"feedbackView.jsp?c_name="+cb.getName()+"\">"+cb.getName()+"</a></td>");
                 out.print("<td>" + cb.getGender()+"</td>");
                 out.print("<td>" + cb.getQuali()+"</td>");

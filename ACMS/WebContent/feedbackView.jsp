@@ -66,6 +66,7 @@ String name = request.getParameter("c_name");
   <table id = "keywords" class="table table-striped">
     <thead>
       <tr>
+      	<th>Date</th>
         <th>Interviewer</th>
         <th>Level</th>
         <th>Result</th>
@@ -78,10 +79,11 @@ String name = request.getParameter("c_name");
  <% while(itr1.hasNext()) {
 	 			CandidatePojo cb = itr1.next();
                 out.print("<tr>");
-                out.print("<td>" + cb.getName());
-                out.print("<td>" + cb.getGender());
-                out.print("<td>" + cb.getQuali());
-                out.print("<td>" + cb.getEmail());
+                out.print("<td>" + cb.getPhone()+"</td>");
+                out.println("<td><a href=\"feedbackViewI.jsp?i_name="+cb.getName()+"\">"+cb.getName()+"</a></td>");
+                out.print("<td>" + cb.getGender()+"</td>");
+                out.print("<td>" + cb.getQuali()+"</td>");
+                out.print("<td>" + cb.getEmail()+"</td>");
                 out.print("</tr>");
    }
 %>   

@@ -1,5 +1,8 @@
 package com.acms.dao;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -81,10 +84,6 @@ public class ScheduleDAO {
 									  }	
 									}
 								}
-																
-
-								
-								
 							}
 								slot = slot + 1;
 						}
@@ -174,7 +173,7 @@ public class ScheduleDAO {
 		ArrayList<CandidatePojo>  cc = new ArrayList<CandidatePojo>();
 		CandidatePojo bean;
 		try {
-			pst = con.prepareStatement("select i.Name,r.level,r.result,r.feedback from interviewer i,interview_review r,candidate c where c.mobile = r.mobile_fk and i.email = r.email_ifk and c.name = '"+c_name+"' order by level");
+			pst = con.prepareStatement("select i.Name,r.level,r.result,r.feedback,r.date from interviewer i,interview_review r,candidate c where c.mobile = r.mobile_fk and i.email = r.email_ifk and c.name = '"+c_name+"' order by level");
 			System.out.println(pst);
 			rs=pst.executeQuery();
 			} catch (SQLException e) {
@@ -187,7 +186,8 @@ public class ScheduleDAO {
 			 String level = rs.getString("r.level");	
 			 String result = rs.getString("r.result");
 			 String feedback = rs.getString("r.feedback");
-			 bean = new CandidatePojo(name,level,result,feedback,"",0);
+			 String date = rs.getString("r.date");
+			 bean = new CandidatePojo(name,level,result,feedback,date,0);
 			 cc.add(bean);
 		 }	 
 		return  cc;
@@ -215,7 +215,10 @@ public class ScheduleDAO {
 			rs1.next();
 			System.out.println(pst1);
 			String email = rs1.getString("email");
-			pst =  con.prepareStatement("insert into interview_review values('"+email+"','"+mobile+"','"+level+"','"+res+"','"+feed+"')");
+			java.util.Date uDate = new java.util.Date();
+			DateFormat df = new SimpleDateFormat("YYYY-MM-dd");
+			String sDate = df.format(uDate);
+			pst =  con.prepareStatement("insert into interview_review values('"+email+"','"+mobile+"','"+level+"','"+res+"','"+feed+"','"+sDate+"')");
 			System.out.println(pst);
 			result=pst.executeUpdate();
 			return result;
@@ -231,7 +234,7 @@ public class ScheduleDAO {
 		ArrayList<CandidatePojo>  cc = new ArrayList<CandidatePojo>();
 		CandidatePojo bean;
 		try {
-			pst = con.prepareStatement("select c.Name,r.level,r.result,r.feedback from interviewer i,interview_review r,candidate c where c.mobile = r.mobile_fk and i.email = r.email_ifk and i.name = '"+i_name+"' order by level");
+			pst = con.prepareStatement("select c.Name,r.level,r.result,r.feedback,r.date from interviewer i,interview_review r,candidate c where c.mobile = r.mobile_fk and i.email = r.email_ifk and i.name = '"+i_name+"' order by level");
 			System.out.println(pst);
 			rs=pst.executeQuery();
 			} catch (SQLException e) {
@@ -244,7 +247,8 @@ public class ScheduleDAO {
 			 String level = rs.getString("r.level");	
 			 String result = rs.getString("r.result");
 			 String feedback = rs.getString("r.feedback");
-			 bean = new CandidatePojo(name,level,result,feedback,"",0);
+			 String date = rs.getString("r.date");
+			 bean = new CandidatePojo(name,level,result,feedback,date,0);
 			 cc.add(bean);
 		 }	 
 		return  cc;

@@ -1,6 +1,7 @@
 package com.acms.dao;
 
 import java.sql.ResultSet;
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -38,5 +39,20 @@ public class AdminDAO {
 			}
 			return result;
 		}	
+	
+	public int truncateTables() throws SQLException, ClassNotFoundException, IOException{
+		int result = 0;
+		try {
+			pst =  con.prepareStatement("truncate table interviewer1");
+			result = pst.executeUpdate();
+			pst =  con.prepareStatement("truncate table candidate1");
+			result = pst.executeUpdate();
+		} catch (SQLException e) {
+			System.out.println("in exception");
+			e.printStackTrace();
+			return result;
+		}
+		return result;			
+	}
 }
 

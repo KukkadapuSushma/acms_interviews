@@ -42,16 +42,16 @@
     <div class="form-group">
       <label for="InterviewId">Interviewer Name:</label>
         <center>
-    <div class="dropdown">
-  <button  class="btn btn-danger dropdown-toggle" type="button" data-toggle="dropdown" style = "position:absolute;top:-25px;">Select<span class="glyphicon glyphicon-download-alt">
-  </span></button>
-  <ul class="dropdown-menu" style = "position:absolute;left:100px;top:5px;">
-    <% while(itr1.hasNext()) {
-    	    cb = itr1.next();
- 	%>
-   <li><a href="feedbackViewI.jsp?c_name=<%= cb.getName()%>" name = c_name value = <%= cb.getName()%> ><%= cb.getName()%></a></li><%} %>
-  </ul>
-</div>
+    	<div class="dropdown">
+  		<button  class="btn btn-danger dropdown-toggle" type="button" data-toggle="dropdown" style = "position:absolute;top:-25px;">Select<span class="glyphicon glyphicon-download-alt">
+  		</span></button>
+  		<ul class="dropdown-menu" style = "position:absolute;left:100px;top:5px;">
+    		<% while(itr1.hasNext()) {
+    	    	cb = itr1.next();
+ 		%>
+   			<li><a href="feedbackViewI.jsp?i_name=<%= cb.getName()%>" name = i_name value = <%= cb.getName()%> ><%= cb.getName()%></a></li><%} %>
+  		</ul>
+	</div>
  </center>
       
     </div>
