@@ -48,7 +48,7 @@ li {
   <li><a href="homeView.jsp" target="frame_b">Home</a></li><br>
   <li><a href="addInterviewer.jsp" target="frame_b">Add Interviewer</a></li><br>
   <li><a href="addCandidate.jsp" target="frame_b">Add Candidate</a></li><br>
-  <li><a href="scheduleView.jsp" target = "frame_b">Schedule for today</a></li><br>
+  <li><a href="schedule.jsp" target = "frame_b">Schedule for today</a></li><br>
   <li><a href="getFeedback.jsp" target = "frame_b">Get Feedback On Candidate</a></li><br>
   <li><a href="getfeedbackI.jsp" target = "frame_b">Get Feedback Given by Interviewer</a></li><br>
   <li><a href="LogoutController" target = "_top">Logout</a></li><br>

@@ -40,7 +40,7 @@ public class CandidatesScheduled extends HttpServlet {
 		}catch (NullPointerException e) {
 			 out.println("<script type = \"text/javascript\">");
 			 out.println("alert('No Candidates are selected');");
-			 out.println("location='scheduleView.jsp");
+			 out.println("location='scheduleView.jsp'");
 			 out.println("</script>");
 			 e.printStackTrace();
 		} catch (SQLException e) {
@@ -49,7 +49,7 @@ public class CandidatesScheduled extends HttpServlet {
 		} catch (ClassNotFoundException e) {
 			out.println("<script type = \"text/javascript\">");
 			 out.println("alert('No Candidates are selected');");
-			 out.println("location='scheduleView.jsp");
+			 out.println("location='scheduleView.jsp'");
 			 out.println("</script>");
 			// TODO Auto-generated catch block
 			e.printStackTrace();

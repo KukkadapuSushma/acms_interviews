@@ -51,6 +51,8 @@ public class CandidateDAO {
 		try {
 			pst =  con.prepareStatement("insert into candidate1 values('"+name+"','"+level+"')");
 			result = pst.executeUpdate();
+			pst =  con.prepareStatement("update candidate set status = 1 where name = '"+name+"'");
+			result = pst.executeUpdate();
 			System.out.println(pst);
 		} catch (SQLException e) {
 			System.out.println("in exception");

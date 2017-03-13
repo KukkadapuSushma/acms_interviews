@@ -52,6 +52,8 @@ public class InterviewerDAO {
 		try {
 			pst =  con.prepareStatement("insert into interviewer1 values('"+name+"','"+level+"','"+1+"')");
 			result = pst.executeUpdate();
+			pst =  con.prepareStatement("update interviewer set status = 1 where name = '"+name+"'");
+			result = pst.executeUpdate();
 			System.out.println(pst);
 		} catch (SQLException e) {
 			System.out.println("in exception");

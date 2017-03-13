@@ -47,6 +47,10 @@ public class AdminDAO {
 			result = pst.executeUpdate();
 			pst =  con.prepareStatement("truncate table candidate1");
 			result = pst.executeUpdate();
+			pst = con.prepareStatement("update candidate set status = 0");
+			pst.executeUpdate();
+			pst = con.prepareStatement("update interviewer set status = 0");
+			pst.executeUpdate();
 		} catch (SQLException e) {
 			System.out.println("in exception");
 			e.printStackTrace();

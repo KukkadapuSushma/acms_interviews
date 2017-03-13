@@ -62,7 +62,7 @@ String name = request.getParameter("i_name");
 <div class="container">
   <div class = "row">
   <div class="col-sm-6 col-md-8 col-md-offset-2">
-  <div class = "well"><center><h3><font color="red">FeedBack given by <%=name %></font><h3></center>  
+  <div class = "well"><center><h3><font color="red">FeedBack given by <%=name %></font></h3></center>  
   <table id = "keywords" class="table table-striped">
     <thead>
       <tr>
@@ -93,6 +93,5 @@ String name = request.getParameter("i_name");
 </div>
 </div>
 </div>
-
 </body>
 </html>

@@ -34,12 +34,8 @@ public class ScheduleDAO {
 			pst =  con.prepareStatement("select name,level from candidate1");
 			rs=pst.executeQuery();
 			int k =1;
-		
-				System.out.println("please come");
 				while(rs.next()){
-					
 					if(k<10){
-						
 						if(k%4 == 0){
 							j = 4;
 						} 
@@ -49,37 +45,30 @@ public class ScheduleDAO {
 						int slot = j;
 						System.out.println(slot);
 						while(slot<10){ 
-							
 							pst1 = con.prepareStatement("select name,level from interviewer1 order by level");
 							rs1 = pst1.executeQuery();
-							
 							while(rs1.next()){
-								
 								String name = rs.getString("name");
-								System.out.println(name);
 								pst4 = con.prepareStatement("select level,name from candidate1 where name = '"+name+"'");
 								rs4 = pst4.executeQuery();
 								String interviewer = rs1.getString("name");
 								pst6 = con.prepareStatement("select var from interviewer1 where name = '"+interviewer+"' " );
 								rs5 = pst6.executeQuery();
-								
 								while(rs4.next()){
-									
 									while(rs5.next()){
 										if(rs1.getInt("level") >= rs4.getInt("level") && rs.getInt("level") < 4 && rs5.getInt("var") < 5){
-											pst2 = con.prepareStatement("insert into scheduler(candidate, interviewer, level, slot) values('"+rs.getString("name")+"','"+rs1.getString("name")+"','"+rs1.getInt("level")+"','"+(slot++)+"')");
+											java.util.Date uDate = new java.util.Date();
+											DateFormat df = new SimpleDateFormat("YYYY-MM-dd");
+											String sDate = df.format(uDate);
+											pst2 = con.prepareStatement("insert into scheduler(candidate, interviewer, level,date,slot) values('"+rs.getString("name")+"','"+rs1.getString("name")+"','"+rs1.getInt("level")+"','"+sDate+"','"+(slot++)+"')");
 											int ans = pst2.executeUpdate();
-											
 											if(ans >0){
-												
 												pst3 = con.prepareStatement ("update candidate1 set level = level+1 where name = ?"); 
 												pst3.setString(1, name);
 												pst3.executeUpdate();
 												pst5 = con.prepareStatement("update interviewer1 set var = var + 1 where name = ?");
 												pst5.setString(1, rs1.getString("name"));
 												pst5.executeUpdate();
-												
-												
 											}								
 									  }	
 									}
@@ -99,15 +88,13 @@ public class ScheduleDAO {
 		return result;
 	}
 
-	
 	public  ArrayList<interviewPojo> findInterviewes() throws SQLException{
 	 	ArrayList<interviewPojo> listOfinterviewes = new ArrayList<interviewPojo>();
-		
-
-				pst7 = con.prepareStatement("select s.candidate,s.interviewer,s.level,i.time,s.interview_id from scheduler s , slots i where s.slot = i.slot order by s.slot");
+	 			java.util.Date uDate = new java.util.Date();
+	 			DateFormat df = new SimpleDateFormat("YYYY-MM-dd");
+	 			String sDate = df.format(uDate);
+				pst7 = con.prepareStatement("select s.candidate,s.interviewer,s.level,i.time,s.interview_id from scheduler s , slots i where s.slot = i.slot and s.date =  '"+sDate+"' order by s.slot");
 				rs6 = pst7.executeQuery();
-
-				
 				while(rs6.next())
 		        {
 					interviewPojo userpojo  = new interviewPojo();
@@ -128,7 +115,7 @@ public class ScheduleDAO {
 		ArrayList<CandidatePojo>  cc = new ArrayList<CandidatePojo>();
 		CandidatePojo bean;
 		try {
-			pst = con.prepareStatement("select name,gender,qualification,level from candidate order by name");
+			pst = con.prepareStatement("select name,gender,qualification,level from candidate where status = 0 order by name");
 			System.out.println(pst);																																																															
 			rs=pst.executeQuery();
 			} catch (SQLException e) {
@@ -151,7 +138,7 @@ public class ScheduleDAO {
 		ArrayList<InterviewerPojo>  cc = new ArrayList<InterviewerPojo>();
 		InterviewerPojo bean;
 		try {
-			pst = con.prepareStatement("select name,level from interviewer order by level");
+			pst = con.prepareStatement("select name,level from interviewer where status = 0 order by level");
 			System.out.println(pst);																																																															
 			rs=pst.executeQuery();
 			} catch (SQLException e) {
