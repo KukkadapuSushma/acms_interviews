@@ -29,6 +29,7 @@ CREATE TABLE `candidate` (
   `mobile` varchar(255) NOT NULL,
   `qualification` varchar(255) NOT NULL,
   `level` int(11) DEFAULT '0',
+  `status` int(1) DEFAULT '0',
   PRIMARY KEY (`mobile`),
   UNIQUE KEY `email` (`email`),
   UNIQUE KEY `mobile` (`mobile`)
@@ -41,7 +42,7 @@ CREATE TABLE `candidate` (
 
 LOCK TABLES `candidate` WRITE;
 /*!40000 ALTER TABLE `candidate` DISABLE KEYS */;
-INSERT INTO `candidate` VALUES ('Prasanna','Female','prasu@yahoo.com','7123089760','PG',2),('Harshi','Male','harshi@gmail.com','8008962436','Btech',1),('Raju','Male','raju123@ymail.com','8282128212','MBA',3),('Damini','Female','daminisatya@gmail.com','8989898989','Btech',2),('Haritha','Female','haritha@gmail.com','9000928928','Btech',2),('Vasanth','Male','vasanth@gmail.com','9191919191','Btech',1),('Kumar','Male','kumar3165@gmail.com','9391181566','PG',1),('Kavii','Female','ka@gmail.com','9399973512','Mtech',2),('Preetha','Female','preetha@gmail.com','9399973514','PG',2),('Mayank','Male','mayank@gmail.com','9494234630','Btech',1),('Sushma','Female','sush@gmail.com','9701387079','Btech',2),('Rani','Female','rani@yahoo.com','9898989898','PG',2),('Rahul','Male','rahul@gmail.com','9900990090','PG',1),('Vipin','Male','vipin@gmail.com','9988998899','Btech',1);
+INSERT INTO `candidate` VALUES ('Prasanna','Female','prasu@yahoo.com','7123089760','PG',2,0),('Harshi','Male','harshi@gmail.com','8008962436','Btech',1,0),('Raju','Male','raju123@ymail.com','8282128212','MBA',3,0),('Damini','Female','daminisatya@gmail.com','8989898989','Btech',2,0),('Haritha','Female','haritha@gmail.com','9000928928','Btech',2,0),('Vasanth','Male','vasanth@gmail.com','9191919191','Btech',1,0),('Kumar','Male','kumar3165@gmail.com','9391181566','PG',1,0),('Kavii','Female','ka@gmail.com','9399973512','Mtech',2,0),('Preetha','Female','preetha@gmail.com','9399973514','PG',2,0),('Mayank','Male','mayank@gmail.com','9494234630','Btech',1,0),('Sushma','Female','sush@gmail.com','9701387079','Btech',2,0),('Rani','Female','rani@yahoo.com','9898989898','PG',2,0),('Rahul','Male','rahul@gmail.com','9900990090','PG',1,0),('Vipin','Male','vipin@gmail.com','9988998899','Btech',1,0);
 /*!40000 ALTER TABLE `candidate` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -81,6 +82,7 @@ CREATE TABLE `interview_review` (
   `level` int(11) NOT NULL,
   `result` varchar(255) NOT NULL,
   `feedback` varchar(255) NOT NULL,
+  `date` date DEFAULT NULL,
   PRIMARY KEY (`email_ifk`,`mobile_fk`,`level`),
   KEY `mobile_fk` (`mobile_fk`),
   CONSTRAINT `interview_review_ibfk_1` FOREIGN KEY (`email_ifk`) REFERENCES `interviewer` (`email`),
@@ -94,7 +96,7 @@ CREATE TABLE `interview_review` (
 
 LOCK TABLES `interview_review` WRITE;
 /*!40000 ALTER TABLE `interview_review` DISABLE KEYS */;
-INSERT INTO `interview_review` VALUES ('anuranjan@gmail.com','7123089760',2,'Selected','Good'),('anuranjan@gmail.com','8989898989',2,'Rejected','Bad Performance'),('datladivyakrishna1996@gmail.com','8989898989',1,'Selected','Good communication skills'),('datladivyakrishna1996@gmail.com','9000928928',2,'Selected','Have to improve'),('datladivyakrishna1996@gmail.com','9191919191',1,'Rejected','Excellent'),('datladivyakrishna1996@gmail.com','9399973512',1,'Rejected','Very bad performance'),('kavith@g.com','9000928928',0,'Rejected','Core subjects knowledge is weak'),('raghuram@hotmail.com','8989898989',2,'Selected','Good');
+INSERT INTO `interview_review` VALUES ('radhika@yahoo.com','9900990090',1,'Selected','Great Performance','2017-03-12');
 /*!40000 ALTER TABLE `interview_review` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -111,6 +113,7 @@ CREATE TABLE `interviewer` (
   `mobile` varchar(255) NOT NULL,
   `level` int(11) NOT NULL,
   `var` int(11) DEFAULT '1',
+  `status` int(1) DEFAULT '0',
   PRIMARY KEY (`email`),
   UNIQUE KEY `mobile` (`mobile`),
   UNIQUE KEY `email` (`email`)
@@ -123,7 +126,7 @@ CREATE TABLE `interviewer` (
 
 LOCK TABLES `interviewer` WRITE;
 /*!40000 ALTER TABLE `interviewer` DISABLE KEYS */;
-INSERT INTO `interviewer` VALUES ('Anuranjan','anuranjan@gmail.com','9797979797',3,1),('Kavitha','datladivyakrishna1996@gmail.com','9963027712',1,1),('Datla Divya Krishna','divya@gmail.com','999999999',2,1),('ganesh','kavith@g.com','1234567890',1,1),('Lohith','lohith@gmail.com','9845880616',2,1),('Radhika','radhika@yahoo.com','8143374403',1,1),('Raghuram','raghuram@hotmail.com','8703212345',2,1),('Raja','raja12@yahoo.com','8712345678',3,1),('Kavi','s@r.com','9876543211',3,1),('sathya','sathya@gmail.com','9885885033',4,1),('Sunitha','sunitha@gmail.com','9090909090',2,1),('Sush','sush@gmail.com','9701387069',3,1);
+INSERT INTO `interviewer` VALUES ('Anuranjan','anuranjan@gmail.com','9797979797',3,1,0),('Kavitha','datladivyakrishna1996@gmail.com','9963027712',1,1,0),('Datla Divya Krishna','divya@gmail.com','999999999',2,1,0),('ganesh','kavith@g.com','1234567890',1,1,0),('Lohith','lohith@gmail.com','9845880616',2,1,0),('Radhika','radhika@yahoo.com','8143374403',1,1,0),('Raghuram','raghuram@hotmail.com','8703212345',2,1,0),('Raja','raja12@yahoo.com','8712345678',3,1,0),('Kavi','s@r.com','9876543211',3,1,0),('sathya','sathya@gmail.com','9885885033',4,1,0),('Sunitha','sunitha@gmail.com','9090909090',2,1,0),('Sush','sush@gmail.com','9701387069',3,1,0);
 /*!40000 ALTER TABLE `interviewer` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -217,8 +220,13 @@ CREATE TABLE `scheduler` (
   `level` int(11) DEFAULT NULL,
   `slot` int(11) DEFAULT NULL,
   `interview_id` int(11) NOT NULL AUTO_INCREMENT,
-  PRIMARY KEY (`interview_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  `date` date DEFAULT NULL,
+  PRIMARY KEY (`interview_id`),
+  UNIQUE KEY `candidate` (`candidate`,`interviewer`),
+  UNIQUE KEY `candidate_2` (`candidate`,`interviewer`,`slot`),
+  UNIQUE KEY `interviewer` (`interviewer`,`slot`),
+  UNIQUE KEY `candidate_3` (`candidate`,`slot`)
+) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -227,6 +235,7 @@ CREATE TABLE `scheduler` (
 
 LOCK TABLES `scheduler` WRITE;
 /*!40000 ALTER TABLE `scheduler` DISABLE KEYS */;
+INSERT INTO `scheduler` VALUES ('Kavii','Lohith',2,4,1,'2017-03-12'),('Kavii','Anuranjan',3,5,2,'2017-03-12'),('Kavii','sathya',4,6,3,'2017-03-12'),('Kumar','ganesh',1,1,4,'2017-03-11'),('Kumar','Raghuram',2,2,5,'2017-03-12'),('Kumar','Kavi',3,3,6,'2017-03-12'),('Mayank','ganesh',1,2,7,'2017-03-11'),('Mayank','Raghuram',2,3,8,'2017-03-12'),('Mayank','Kavi',3,4,9,'2017-03-12'),('Damini','Lohith',2,1,11,'2017-03-13'),('Damini','Anuranjan',3,2,12,'2017-03-13'),('Damini','sathya',4,3,13,'2017-03-13'),('Haritha','Lohith',2,2,14,'2017-03-13'),('Haritha','Anuranjan',3,3,15,'2017-03-13'),('Haritha','sathya',4,4,16,'2017-03-13'),('Harshi','ganesh',1,3,17,'2017-03-13');
 /*!40000 ALTER TABLE `scheduler` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -262,4 +271,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-03-06 21:22:19
+-- Dump completed on 2017-03-13 20:13:08
