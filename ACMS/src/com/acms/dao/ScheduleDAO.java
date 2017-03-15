@@ -109,6 +109,24 @@ public class ScheduleDAO {
 		return listOfinterviewes;
 	
 }
+	
+	public  ArrayList<interviewPojo> findAllInterviewes() throws SQLException{
+	 	ArrayList<interviewPojo> listOfinterviewes = new ArrayList<interviewPojo>();
+	 			pst7 = con.prepareStatement("select s.date,s.candidate,s.interviewer,s.level,i.time,s.interview_id from scheduler s , slots i where s.slot = i.slot order by s.date desc");
+				rs6 = pst7.executeQuery();
+				while(rs6.next())
+		        {
+					interviewPojo userpojo  = new interviewPojo();
+					userpojo.setid(rs6.getInt("s.interview_id"));
+					userpojo.setcandidate(rs6.getString("candidate"));
+					userpojo.setinterviewer(rs6.getString("interviewer"));
+					userpojo.setlevel(rs6.getInt("level"));
+					userpojo.setslots(rs6.getString("s.date"));
+					listOfinterviewes.add(userpojo);
+		        }
+		return listOfinterviewes;
+}
+
 
 
 	public ArrayList<CandidatePojo> getCandidates() throws SQLException{

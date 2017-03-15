@@ -23,7 +23,7 @@ public class feedbackController extends HttpServlet {
 			System.out.println(result);
 			if(result > 0) {
 					String msg = "Feedback Recorded!!";
-					response.sendRedirect("schedule.jsp?msg="+msg);
+					response.sendRedirect("feedbackSet.jsp?msg="+msg);
 					System.out.println("record inserted into db");
 				}
 				else {

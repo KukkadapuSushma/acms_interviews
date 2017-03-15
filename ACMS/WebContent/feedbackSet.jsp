@@ -63,7 +63,7 @@ String msg = request.getParameter("msg");
 <body>
 <%
  ScheduleDAO pdao = new ScheduleDAO();
- ArrayList<interviewPojo> alc1 = pdao.findInterviewes();
+ ArrayList<interviewPojo> alc1 = pdao.findAllInterviewes();
  Iterator<interviewPojo> itr1 = alc1.iterator();
 %>
 <br>
@@ -78,11 +78,11 @@ String msg = request.getParameter("msg");
 <div class="container">
   <div class = "row">
   <div class="col-sm-6 col-md-9  col-md-offset-1">
-  <div class = "well"><center><h3><font color="red">Schedule for today!</font><h3></center>  
+  <div class = "well"><center><h3>Schedule for today!<h3></center>  
   <table id = "example" class="dataTable" >
     <thead>
       <tr>
-        <th>Time Slot</th>
+        <th>Date</th>
         <th>Interviewer</th>
         <th>Candidate</th>
         <th>Level</th>

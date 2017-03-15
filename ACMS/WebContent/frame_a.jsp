@@ -1,3 +1,12 @@
+<%
+String usern = (String)session.getAttribute("U");
+if(usern == null){
+	response.sendRedirect("loginView.jsp?error= Please Login");
+}
+String error = request.getParameter("error");
+String msg = request.getParameter("msg");
+%>
+
 <html>
 <head>
 <title>Interview Scheduler</title>
@@ -14,7 +23,7 @@ body {
     background-image:url("frame_a_wp.gif");
 }
 ul#menu {
-    top: 250px;
+    top: 175px;
     right: 20px;
     position:absolute;
 }
@@ -49,6 +58,7 @@ li {
   <li><a href="addInterviewer.jsp" target="frame_b">Add Interviewer</a></li><br>
   <li><a href="addCandidate.jsp" target="frame_b">Add Candidate</a></li><br>
   <li><a href="schedule.jsp" target = "frame_b">Schedule for today</a></li><br>
+  <li><a href="feedbackSet.jsp" target = "frame_b">Give Feedback</a></li><br>
   <li><a href="getFeedback.jsp" target = "frame_b">Get Feedback On Candidate</a></li><br>
   <li><a href="getfeedbackI.jsp" target = "frame_b">Get Feedback Given by Interviewer</a></li><br>
   <li><a href="LogoutController" target = "_top">Logout</a></li><br>
