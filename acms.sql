@@ -42,7 +42,7 @@ CREATE TABLE `candidate` (
 
 LOCK TABLES `candidate` WRITE;
 /*!40000 ALTER TABLE `candidate` DISABLE KEYS */;
-INSERT INTO `candidate` VALUES ('Prasanna','Female','prasu@yahoo.com','7123089760','PG',2,0),('Harshi','Male','harshi@gmail.com','8008962436','Btech',1,0),('Raju','Male','raju123@ymail.com','8282128212','MBA',3,0),('Damini','Female','daminisatya@gmail.com','8989898989','Btech',2,0),('Haritha','Female','haritha@gmail.com','9000928928','Btech',2,0),('Vasanth','Male','vasanth@gmail.com','9191919191','Btech',1,0),('Kumar','Male','kumar3165@gmail.com','9391181566','PG',1,0),('Kavii','Female','ka@gmail.com','9399973512','Mtech',2,0),('Preetha','Female','preetha@gmail.com','9399973514','PG',2,0),('Mayank','Male','mayank@gmail.com','9494234630','Btech',1,0),('Sushma','Female','sush@gmail.com','9701387079','Btech',2,0),('Rani','Female','rani@yahoo.com','9898989898','PG',2,0),('Rahul','Male','rahul@gmail.com','9900990090','PG',1,0),('Vipin','Male','vipin@gmail.com','9988998899','Btech',1,0);
+INSERT INTO `candidate` VALUES ('Prasanna','Female','prasu@yahoo.com','7123089760','PG',2,1),('Harshi','Male','harshi@gmail.com','8008962436','Btech',1,1),('Raju','Male','raju123@ymail.com','8282128212','MBA',3,1),('Damini','Female','daminisatya@gmail.com','8989898989','Btech',2,1),('Haritha','Female','haritha@gmail.com','9000928928','Btech',2,1),('Vasanth','Male','vasanth@gmail.com','9191919191','Btech',1,1),('Kumar','Male','kumar3165@gmail.com','9391181566','PG',1,1),('Kavii','Female','ka@gmail.com','9399973512','Mtech',2,1),('Preetha','Female','preetha@gmail.com','9399973514','PG',2,1),('Mayank','Male','mayank@gmail.com','9494234630','Btech',1,1),('Sushma','Female','sush@gmail.com','9701387079','Btech',2,1),('Rani','Female','rani@yahoo.com','9898989898','PG',2,1),('Rahul','Male','rahul@gmail.com','9900990090','PG',1,1),('Vipin','Male','vipin@gmail.com','9988998899','Btech',1,1);
 /*!40000 ALTER TABLE `candidate` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -66,6 +66,7 @@ CREATE TABLE `candidate1` (
 
 LOCK TABLES `candidate1` WRITE;
 /*!40000 ALTER TABLE `candidate1` DISABLE KEYS */;
+INSERT INTO `candidate1` VALUES ('Damini',5),('Haritha',5),('Harshi',5),('Kavii',2),('Kumar',1),('Mayank',1),('Prasanna',2),('Preetha',2),('Rahul',1),('Raju',3),('Rani',2),('Sushma',2),('Vasanth',1),('Vipin',1);
 /*!40000 ALTER TABLE `candidate1` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -96,7 +97,7 @@ CREATE TABLE `interview_review` (
 
 LOCK TABLES `interview_review` WRITE;
 /*!40000 ALTER TABLE `interview_review` DISABLE KEYS */;
-INSERT INTO `interview_review` VALUES ('radhika@yahoo.com','9900990090',1,'Selected','Great Performance','2017-03-12');
+INSERT INTO `interview_review` VALUES ('kavith@g.com','9391181566',1,'Rejected','Poor Resume','2017-03-13'),('lohith@gmail.com','8989898989',2,'Selected','Good','2017-03-13'),('radhika@yahoo.com','9900990090',1,'Selected','Great Performance','2017-03-12');
 /*!40000 ALTER TABLE `interview_review` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -126,7 +127,7 @@ CREATE TABLE `interviewer` (
 
 LOCK TABLES `interviewer` WRITE;
 /*!40000 ALTER TABLE `interviewer` DISABLE KEYS */;
-INSERT INTO `interviewer` VALUES ('Anuranjan','anuranjan@gmail.com','9797979797',3,1,0),('Kavitha','datladivyakrishna1996@gmail.com','9963027712',1,1,0),('Datla Divya Krishna','divya@gmail.com','999999999',2,1,0),('ganesh','kavith@g.com','1234567890',1,1,0),('Lohith','lohith@gmail.com','9845880616',2,1,0),('Radhika','radhika@yahoo.com','8143374403',1,1,0),('Raghuram','raghuram@hotmail.com','8703212345',2,1,0),('Raja','raja12@yahoo.com','8712345678',3,1,0),('Kavi','s@r.com','9876543211',3,1,0),('sathya','sathya@gmail.com','9885885033',4,1,0),('Sunitha','sunitha@gmail.com','9090909090',2,1,0),('Sush','sush@gmail.com','9701387069',3,1,0);
+INSERT INTO `interviewer` VALUES ('Anuranjan','anuranjan@gmail.com','9797979797',3,1,1),('Kavitha','datladivyakrishna1996@gmail.com','9963027712',1,1,1),('Datla Divya Krishna','divya@gmail.com','999999999',2,1,0),('ganesh','kavith@g.com','1234567890',1,1,1),('Lohith','lohith@gmail.com','9845880616',2,1,1),('Radhika','radhika@yahoo.com','8143374403',1,1,1),('Raghuram','raghuram@hotmail.com','8703212345',2,1,1),('Raja','raja12@yahoo.com','8712345678',3,1,1),('Kavi','s@r.com','9876543211',3,1,1),('sathya','sathya@gmail.com','9885885033',4,1,1),('Sunitha','sunitha@gmail.com','9090909090',2,1,1),('Sush','sush@gmail.com','9701387069',3,1,1);
 /*!40000 ALTER TABLE `interviewer` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -151,6 +152,7 @@ CREATE TABLE `interviewer1` (
 
 LOCK TABLES `interviewer1` WRITE;
 /*!40000 ALTER TABLE `interviewer1` DISABLE KEYS */;
+INSERT INTO `interviewer1` VALUES ('Anuranjan',3,4),('ganesh',1,2),('Kavi',3,1),('Kavitha',1,1),('Lohith',2,4),('Radhika',1,1),('Raghuram',2,1),('Raja',3,1),('sathya',4,4),('Sunitha',2,1),('Sush',3,1);
 /*!40000 ALTER TABLE `interviewer1` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -222,11 +224,11 @@ CREATE TABLE `scheduler` (
   `interview_id` int(11) NOT NULL AUTO_INCREMENT,
   `date` date DEFAULT NULL,
   PRIMARY KEY (`interview_id`),
-  UNIQUE KEY `candidate` (`candidate`,`interviewer`),
-  UNIQUE KEY `candidate_2` (`candidate`,`interviewer`,`slot`),
-  UNIQUE KEY `interviewer` (`interviewer`,`slot`),
-  UNIQUE KEY `candidate_3` (`candidate`,`slot`)
-) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8;
+  UNIQUE KEY `candidate` (`candidate`,`interviewer`,`date`),
+  UNIQUE KEY `candidate_2` (`candidate`,`interviewer`,`slot`,`date`),
+  UNIQUE KEY `interviewer` (`interviewer`,`slot`,`date`),
+  UNIQUE KEY `candidate_3` (`candidate`,`slot`,`date`)
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -235,7 +237,7 @@ CREATE TABLE `scheduler` (
 
 LOCK TABLES `scheduler` WRITE;
 /*!40000 ALTER TABLE `scheduler` DISABLE KEYS */;
-INSERT INTO `scheduler` VALUES ('Kavii','Lohith',2,4,1,'2017-03-12'),('Kavii','Anuranjan',3,5,2,'2017-03-12'),('Kavii','sathya',4,6,3,'2017-03-12'),('Kumar','ganesh',1,1,4,'2017-03-11'),('Kumar','Raghuram',2,2,5,'2017-03-12'),('Kumar','Kavi',3,3,6,'2017-03-12'),('Mayank','ganesh',1,2,7,'2017-03-11'),('Mayank','Raghuram',2,3,8,'2017-03-12'),('Mayank','Kavi',3,4,9,'2017-03-12'),('Damini','Lohith',2,1,11,'2017-03-13'),('Damini','Anuranjan',3,2,12,'2017-03-13'),('Damini','sathya',4,3,13,'2017-03-13'),('Haritha','Lohith',2,2,14,'2017-03-13'),('Haritha','Anuranjan',3,3,15,'2017-03-13'),('Haritha','sathya',4,4,16,'2017-03-13'),('Harshi','ganesh',1,3,17,'2017-03-13');
+INSERT INTO `scheduler` VALUES ('Damini','Lohith',2,1,1,'2017-03-21'),('Damini','Anuranjan',3,2,2,'2017-03-21'),('Damini','sathya',4,3,3,'2017-03-21'),('Haritha','Lohith',2,2,4,'2017-03-21'),('Haritha','Anuranjan',3,3,5,'2017-03-21'),('Haritha','sathya',4,4,6,'2017-03-21'),('Harshi','ganesh',1,3,7,'2017-03-21'),('Harshi','Lohith',2,4,8,'2017-03-21'),('Harshi','Anuranjan',3,5,9,'2017-03-21'),('Harshi','sathya',4,6,10,'2017-03-21');
 /*!40000 ALTER TABLE `scheduler` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -271,4 +273,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-03-13 20:13:08
+-- Dump completed on 2017-03-21 19:05:39
