@@ -13,8 +13,6 @@ public class ConnectionDAO {
 	}
 	// test getConnection
 	public static void main(String args[]) throws Exception {
-		ConnectionDAO dao = new ConnectionDAO();
-		System.out.println(dao.getConnection());
-		
+		ConnectionDAO dao = new ConnectionDAO();	
 	}
 }

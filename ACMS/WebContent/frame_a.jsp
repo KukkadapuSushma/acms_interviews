@@ -6,7 +6,6 @@ if(usern == null){
 String error = request.getParameter("error");
 String msg = request.getParameter("msg");
 %>
-
 <html>
 <head>
 <title>Interview Scheduler</title>
@@ -23,7 +22,7 @@ body {
     background-image:url("frame_a_wp.gif");
 }
 ul#menu {
-    top: 175px;
+    top: 170px;
     right: 20px;
     position:absolute;
 }
@@ -54,14 +53,27 @@ li {
 <br>
 <h4>
 <ul id="menu">
+	<%
+	if(usern == null){ %>
+		<li><a href="homeView.jsp" target="_top">Home</a></li><br>
+  		<li><a href="addInterviewer.jsp" target="_top">Add Interviewer</a></li><br>
+  		<li><a href="addCandidate.jsp" target="_top">Add Candidate</a></li><br>
+		<li><a href="scheduleView.jsp" target="frame_b">Create Schedule</a></li><br>
+  		<li><a href="schedule.jsp" target = "_top">Schedule for today</a></li><br>
+  		<li><a href="feedbackSet.jsp" target = "_top">Give Feedback</a></li><br>
+  		<li><a href="getFeedback.jsp" target = "_top">Get Feedback On Candidate</a></li><br>
+  		<li><a href="getfeedbackI.jsp" target = "_top">Get Feedback Given by Interviewer</a></li><br>
+	<%}else{ %>
   <li><a href="homeView.jsp" target="frame_b">Home</a></li><br>
   <li><a href="addInterviewer.jsp" target="frame_b">Add Interviewer</a></li><br>
   <li><a href="addCandidate.jsp" target="frame_b">Add Candidate</a></li><br>
+  <li><a href="scheduleView.jsp" target="frame_b">Create Schedule</a></li><br>
   <li><a href="schedule.jsp" target = "frame_b">Schedule for today</a></li><br>
   <li><a href="feedbackSet.jsp" target = "frame_b">Give Feedback</a></li><br>
   <li><a href="getFeedback.jsp" target = "frame_b">Get Feedback On Candidate</a></li><br>
   <li><a href="getfeedbackI.jsp" target = "frame_b">Get Feedback Given by Interviewer</a></li><br>
-  <li><a href="LogoutController" target = "_top">Logout</a></li><br>
+  <%} %>
+  <li><button class = "btn btn-danger" ><a href="LogoutController" target = "_top">Logout</a></button></li><br>
 </ul>  
 </h4>
 <br>
@@ -81,6 +93,5 @@ li {
 <br>
 <br>
 <br>
-<img src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQKc6Vsiy3vmvkSfa0NR3pDO6R3E_DIcygGMSQkAW4DGphvUkm4" width="140" height="70" alt="Amazon"/>
 </body>
 </html>

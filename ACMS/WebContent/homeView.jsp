@@ -28,7 +28,7 @@ String msg = request.getParameter("msg");
 <br>
 <br>
  <% if(msg != null){
-	   %> <center><h3><font color = red><%=msg%></font></h3></center> 
+	   %> <center><h3><font color = white><%=msg%></font></h3></center> 
    <%} %>
 <br>
 <br>
@@ -48,10 +48,5 @@ String msg = request.getParameter("msg");
 <br>
 <br>
 <br>
- <form role="form" method = "post" action = "scheduleView.jsp">
-   <center><button type="submit" class="btn btn-danger">Create Schedule</button></center>
-  </form>
-
-
 </body>
 </html>

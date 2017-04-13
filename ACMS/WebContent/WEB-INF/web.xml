@@ -17,6 +17,19 @@
   <filter-mapping>
     <filter-name>AuthenticationFilter</filter-name>
     <url-pattern>/AuthenticationFilter</url-pattern>
+    <url-pattern>/addCandidate.jsp</url-pattern>
+    <url-pattern>/addInterviewer.jsp</url-pattern>
+    <url-pattern>/feedbackSet.jsp</url-pattern>
+    <url-pattern>/feedbackViewI.jsp</url-pattern>
+    <url-pattern>/form_fill.jsp</url-pattern>
+    <url-pattern>/frame_a.jsp</url-pattern>
+    <url-pattern>/getFeedback.jsp</url-pattern>
+    <url-pattern>/getFeedbackI.jsp</url-pattern>
+    <url-pattern>/homeView.jsp</url-pattern>
+    <url-pattern>/mainView.jsp</url-pattern>
+    <url-pattern>/schedule.jsp</url-pattern>
+    <url-pattern>/scheduleView.jsp</url-pattern>
+    <url-pattern>/setFeedback.jsp</url-pattern>
   </filter-mapping>
   <servlet>
     <description></description>
@@ -97,5 +110,15 @@
   <servlet-mapping>
     <servlet-name>SelectedInterviewersController</servlet-name>
     <url-pattern>/SelectedInterviewersController</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>DownloadScheduleController</display-name>
+    <servlet-name>DownloadScheduleController</servlet-name>
+    <servlet-class>com.acms.controller.DownloadScheduleController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DownloadScheduleController</servlet-name>
+    <url-pattern>/DownloadScheduleController</url-pattern>
   </servlet-mapping>
 </web-app>

@@ -37,10 +37,10 @@ String cname = request.getParameter("can_name");
 <form method = "post" action = "feedbackController">
     <div class="form-group">
       <label for="NameofCandidate">Feedback given by:</label>
-      <input class="form-control" id="int_name" value = <%=name %> type="text">
+      <input class="form-control" id="int_name" value = <%=name %> type="text" disabled>
       &nbsp;&nbsp;
       <label for="NameofCandidate">Feedback given to:</label>
-      <input class="form-control" id="Cand_name" value = <%=cname %> type="text"> 
+      <input class="form-control" id="Cand_name" value = <%=cname %> type="text" disabled> 
     </div>
     <div class="form-group">
       <label for="comment">Feedback:</label>

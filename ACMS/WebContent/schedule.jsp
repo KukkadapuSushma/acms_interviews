@@ -70,7 +70,7 @@ String msg = request.getParameter("msg");
 <br>
 <br>
 <% if(msg != null){
-	   %> <center><h3><font color = red><%=msg%></font></h3></center> 
+	   %> <center><h3><font color = white><%=msg%></font></h3></center> 
    <%} %>
 
 <br>
@@ -80,6 +80,7 @@ String msg = request.getParameter("msg");
   <div class="col-sm-6 col-md-9  col-md-offset-1">
   <div class = "well"><center><h3><font color="red">Schedule for today!</font><h3></center>  
   <table id = "example" class="dataTable" >
+  <a href="DownloadScheduleController" class="btn btn-danger" style="margin-right: 7px;">Download Schedule<span class="glyphicon glyphicon-download-alt"></span></a><br><br>
     <thead>
       <tr>
         <th>Time Slot</th>

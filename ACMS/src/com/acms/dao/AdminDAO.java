@@ -20,6 +20,7 @@ public class AdminDAO {
 	
 	public boolean login(String user, String password)
 			throws ClassNotFoundException,SQLException{
+			try{
 			boolean result = false;
 			System.out.println("in admin dao");
 			pst =  con.prepareStatement("Select login_id, aes_decrypt(password,'qwerty') from login where login_id = '" + user + "'");
@@ -38,9 +39,13 @@ public class AdminDAO {
 				System.out.println("please enter correct login id/ password");
 			}
 			return result;
+			}finally{
+				//con.close();
+			}
 		}	
 	
 	public int truncateTables() throws SQLException, ClassNotFoundException, IOException{
+		try{
 		int result = 0;
 		try {
 			pst =  con.prepareStatement("truncate table interviewer1");
@@ -56,7 +61,9 @@ public class AdminDAO {
 			e.printStackTrace();
 			return result;
 		}
-		return result;			
+		return result;
+		}finally{
+			//con.close();
+		}
 	}
 }
-

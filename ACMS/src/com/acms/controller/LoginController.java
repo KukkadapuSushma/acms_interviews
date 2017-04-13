@@ -40,8 +40,6 @@ public class LoginController extends HttpServlet {
 				hs.setAttribute("U", user);
 			//redirect control to next page based on decision
 				if(result){
-					//String role = adao.getrole(user,password);
-					//session.setAttribute("role",role);
 					int res = adao.truncateTables();
 					RequestDispatcher rd = request.getRequestDispatcher("mainView.jsp");
 					rd.forward(request, response);

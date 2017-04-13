@@ -20,7 +20,8 @@ public class InterviewerDAO {
 		con = cdao.getConnection();
 	}
 
-	public int addInterviewer(InterviewerPojo pp) {
+	public int addInterviewer(InterviewerPojo pp) throws SQLException {
+		try{
 		int result = 0;
 		try {
 			int level = pp.getLevel();
@@ -34,9 +35,13 @@ public class InterviewerDAO {
 			return result;
 		}
 		return result;
+		}finally{
+			//con.close();
+		}
 	}
 
 	public InterviewerPojo getInterviewerDetails(String name) throws SQLException {
+		try{
 		pst = con.prepareStatement("select * from interviewer where name = ?");
 		pst.setString(1, name);
 		ResultSet rs = pst.executeQuery();
@@ -45,9 +50,13 @@ public class InterviewerDAO {
 		        tbean = new InterviewerPojo(rs.getString(1),rs.getInt(4),rs.getString(3),rs.getString(5));
 	        } 
 		    return tbean;
+		}finally{
+			//con.close();
+		}
 		}
 
 	public int scheduleInterviewer(String name,int level) throws SQLException, ClassNotFoundException, IOException{
+		try{
 		int result = 0;
 		try {
 			pst =  con.prepareStatement("insert into interviewer1 values('"+name+"','"+level+"','"+1+"')");
@@ -60,7 +69,9 @@ public class InterviewerDAO {
 			e.printStackTrace();
 			return result;
 		}
-		return result;			
+		return result;
+		}finally{
+			//con.close();
+		}
 	}
-	
 	}

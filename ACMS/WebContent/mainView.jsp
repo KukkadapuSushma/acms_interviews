@@ -1,3 +1,12 @@
+<%
+String usern = (String)session.getAttribute("U");
+if(usern == null){
+	response.sendRedirect("loginView.jsp?error= Please Login");
+}
+String error = request.getParameter("error");
+String msg = request.getParameter("msg");
+%>
+
 <html>
 <head>
 <title>Amazon</title>

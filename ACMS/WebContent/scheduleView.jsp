@@ -88,7 +88,7 @@ String msg = request.getParameter("msg");
 </head>
 <body>
 <% if(msg != null){
-	   %> <center><h3><font color = red><%=msg%></font></h3></center> 
+	   %> <center><h3><font color = white><%=msg%></font></h3></center> 
    <%} %>
 
  <div class="well">

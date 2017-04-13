@@ -1,5 +1,11 @@
 <% String id = request.getParameter("interview_id");
 %>
+<%
+String usern = (String)session.getAttribute("U");
+if(usern == null){
+	response.sendRedirect("loginView.jsp?error= Please Login");
+}
+%>
 
 <%@page import = "java.util.Iterator" %>
 <%@page import = "java.util.ArrayList" %>

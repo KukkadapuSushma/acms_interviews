@@ -21,6 +21,7 @@ public class CandidateDAO {
 	}
 
 	public int addCandidate(CandidatePojo pp) {
+		try {
 		int result = 0;
 		try {
 			pst =  con.prepareStatement("insert into candidate values('"+pp.getName()+"','"+pp.getGender()+"','"+pp.getEmail()+"','"+pp.getPhone()+"','"+pp.getQuali()+"','"+pp.getLevel()+"')");
@@ -33,9 +34,12 @@ public class CandidateDAO {
 			return result;
 		}
 		return result;
+		}finally{
+		}
 	}
 	
 	public CandidatePojo getTraineeDetails(String name) throws SQLException {
+		try{
 	    pst = con.prepareStatement("select * from candidate where name = ?");
 	    pst.setString(1, name);
 	    ResultSet rs = pst.executeQuery();
@@ -44,9 +48,13 @@ public class CandidateDAO {
 	        tbean = new CandidatePojo(rs.getString(1),rs.getString(2),rs.getString(3),rs.getString(4),rs.getString(5),rs.getInt(6));
         } 
 	    return tbean;
+		}finally{
+			//con.close();
+		}
 	}
 	
 	public int scheduleCandidate(String name,int level) throws SQLException, ClassNotFoundException, IOException{
+		try{
 		int result = 0;
 		try {
 			pst =  con.prepareStatement("insert into candidate1 values('"+name+"','"+level+"')");
@@ -59,6 +67,9 @@ public class CandidateDAO {
 			e.printStackTrace();
 			return result;
 		}
-		return result;			
+		return result;
+		}finally{
+			//con.close();
+		}
 	}
 }
