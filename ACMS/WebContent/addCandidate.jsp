@@ -48,7 +48,7 @@ body {
     <div class="form-group">
       <label for="name">Candidate name:</label>
       <input type="text" class="form-control" name = "name_c" id="name_c" placeholder="Enter name of candidate" data-error = "Please enter the name" required>
-   
+     <div class = "help-block with-errors"></div> 
     </div>
     <div class="form-group">
       <label for="gender">Gender:</label>
@@ -61,6 +61,7 @@ body {
     <div class="form-group">
       <label for="qualification">Qualification:</label>
       <input type="text" class="form-control"  name = "qualification" id="qualification" placeholder="Enter qualification of candidate" data-error = "Please enter qualification" required>
+      <div class = "help-block with-errors"></div> 
     </div>
     <div class="form-group">
       <label for="Email">Email:</label>

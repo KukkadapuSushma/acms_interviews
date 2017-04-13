@@ -18,8 +18,9 @@ public class feedbackController extends HttpServlet {
 			String i_id = request.getParameter("i_name");
 			String feed = request.getParameter("feed");
 			String res = request.getParameter("result");
+			int level = Integer.parseInt(request.getParameter("level"));
 			ScheduleDAO cdao = new ScheduleDAO();	
-			int result = cdao.setFeedback(i_id,feed,res);
+			int result = cdao.setFeedback(i_id,feed,res,level);
 			System.out.println(result);
 			if(result > 0) {
 					String msg = "Feedback Recorded!!";

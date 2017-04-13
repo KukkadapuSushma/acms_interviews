@@ -104,6 +104,7 @@ String msg = request.getParameter("msg");
       			<input type="hidden" value="<%=usrpojo.getinterviewer()%>" name="int_name">
       			<input type="hidden" value="<%=usrpojo.getcandidate()%>" name="can_name">
       			<input type="hidden" value="<%=usrpojo.getid() %>" name="interview_id">
+      			<input type="hidden" value="<%=usrpojo.getlevel() %>" name="level">
       			<button class = "btn btn-danger" id="myBtn" >Feedback <span class="glyphicon glyphicon-envelope"></span></button>
       			</form>
       			</td>

@@ -45,6 +45,7 @@ body {
     <div class="form-group">
       <label for="name">Interviewer name:</label>
       <input type="text" class="form-control" name="name" id="name" data-error = "Please enter the name" placeholder="Enter name of Interviewer" required>
+      <div class = "help-block with-errors"></div> 
     </div>
     <div class="form-group">
       <label for="level">Level:</label>
@@ -59,10 +60,12 @@ body {
     <div class="form-group">
       <label for="address">Phone number:</label>
       <input type="text" data-error = "Please enter a correct 10 Indian digit number" class="form-control" name="phone" id="phone" pattern = "^[789]\d{9}$" placeholder="Enter phone number of Interviewer" required>
+      <div class = "help-block with-errors"></div> 
     </div>
     <div class="form-group">
       <label for="address">Email id:</label>
       <input type="text" class="form-control" data-error = "Please enter a valid email id" name="email" id="email" pattern ="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" placeholder="Enter email id of Interviewer" required>
+      <div class = "help-block with-errors"></div> 
     </div>
     <center><button type="submit" class="btn btn-danger">Submit</button></center>
    </form>

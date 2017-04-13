@@ -1,6 +1,7 @@
 <% String id = request.getParameter("interview_id"); 
 String name = request.getParameter("int_name"); 
 String cname = request.getParameter("can_name"); 
+String level = request.getParameter("level"); 
 %>
 <!DOCTYPE html>
 <html lang="en">
@@ -54,6 +55,7 @@ String cname = request.getParameter("can_name");
     </div>
 <br>
 	<input type="hidden" value="<%=id %>" name="i_name">
+	<input type="hidden" value="<%=level %>" name="level">
 <center><button type="submit" class="btn btn-danger">Submit</button></center>
 </form>
 </div>

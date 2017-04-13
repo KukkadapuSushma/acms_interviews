@@ -24,7 +24,7 @@ public class CandidateDAO {
 		try {
 		int result = 0;
 		try {
-			pst =  con.prepareStatement("insert into candidate values('"+pp.getName()+"','"+pp.getGender()+"','"+pp.getEmail()+"','"+pp.getPhone()+"','"+pp.getQuali()+"','"+pp.getLevel()+"')");
+			pst =  con.prepareStatement("insert into candidate values('"+pp.getName()+"','"+pp.getGender()+"','"+pp.getEmail()+"','"+pp.getPhone()+"','"+pp.getQuali()+"','"+pp.getLevel()+"','"+0+"')");
 			//pst.setInt(1, pp.getPartner_id());
 			result = pst.executeUpdate();
 			System.out.println(pst);

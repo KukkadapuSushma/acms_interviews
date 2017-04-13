@@ -44,7 +44,8 @@ li {
 <br>
 <br>
 <center>
-<img src="https://images.cooltext.com/4846392.png" width="280" height="70" alt="Sched Amazon" />
+<a href="homeView.jsp" target="frame_b">
+<img src="https://images.cooltext.com/4846392.png" width="280" height="70" alt="Sched Amazon" /></a>
 </center>
 <br>
 <br>
@@ -55,8 +56,7 @@ li {
 <ul id="menu">
 	<%
 	if(usern == null){ %>
-		<li><a href="homeView.jsp" target="_top">Home</a></li><br>
-  		<li><a href="addInterviewer.jsp" target="_top">Add Interviewer</a></li><br>
+		<li><a href="addInterviewer.jsp" target="_top">Add Interviewer</a></li><br>
   		<li><a href="addCandidate.jsp" target="_top">Add Candidate</a></li><br>
 		<li><a href="scheduleView.jsp" target="frame_b">Create Schedule</a></li><br>
   		<li><a href="schedule.jsp" target = "_top">Schedule for today</a></li><br>
@@ -64,7 +64,6 @@ li {
   		<li><a href="getFeedback.jsp" target = "_top">Get Feedback On Candidate</a></li><br>
   		<li><a href="getfeedbackI.jsp" target = "_top">Get Feedback Given by Interviewer</a></li><br>
 	<%}else{ %>
-  <li><a href="homeView.jsp" target="frame_b">Home</a></li><br>
   <li><a href="addInterviewer.jsp" target="frame_b">Add Interviewer</a></li><br>
   <li><a href="addCandidate.jsp" target="frame_b">Add Candidate</a></li><br>
   <li><a href="scheduleView.jsp" target="frame_b">Create Schedule</a></li><br>

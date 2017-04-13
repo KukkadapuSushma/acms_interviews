@@ -222,7 +222,7 @@ public class ScheduleDAO {
 	}
 }
 			
-	public int setFeedback(String i_id, String feed, String res) throws SQLException {
+	public int setFeedback(String i_id, String feed, String res,int level) throws SQLException {
 		// TODO Auto-generated method stub
 		try{
 		int result = 0;
@@ -234,10 +234,9 @@ public class ScheduleDAO {
 			String intr = rs1.getString("interviewer");
 			String can = rs1.getString("candidate");
 			System.out.println(pst1);
-			pst1 = con.prepareStatement("select level,mobile from candidate where name = '"+can+"'");
+			pst1 = con.prepareStatement("select mobile from candidate where name = '"+can+"'");
 			rs1 = pst1.executeQuery();
 			rs1.next();
-			int level = Integer.parseInt(rs1.getString("level"));
 			String mobile = rs1.getString("mobile");
 			System.out.println(pst1);
 			pst1 = con.prepareStatement("select email from interviewer where Name= '"+intr+"'");
