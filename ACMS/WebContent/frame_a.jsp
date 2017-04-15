@@ -22,8 +22,8 @@ body {
     background-image:url("frame_a_wp.gif");
 }
 ul#menu {
-    top: 170px;
-    right: 20px;
+    top: 200px;
+    right: 90px;
     position:absolute;
 }
 ul#menu li a {
@@ -61,16 +61,14 @@ li {
 		<li><a href="scheduleView.jsp" target="frame_b">Create Schedule</a></li><br>
   		<li><a href="schedule.jsp" target = "_top">Schedule for today</a></li><br>
   		<li><a href="feedbackSet.jsp" target = "_top">Give Feedback</a></li><br>
-  		<li><a href="getFeedback.jsp" target = "_top">Get Feedback On Candidate</a></li><br>
-  		<li><a href="getfeedbackI.jsp" target = "_top">Get Feedback Given by Interviewer</a></li><br>
-	<%}else{ %>
+  		<li><a href="viewFeedback.jsp" target = "_top">View Feedback</a></li><br>
+  	<%}else{ %>
   <li><a href="addInterviewer.jsp" target="frame_b">Add Interviewer</a></li><br>
   <li><a href="addCandidate.jsp" target="frame_b">Add Candidate</a></li><br>
   <li><a href="scheduleView.jsp" target="frame_b">Create Schedule</a></li><br>
   <li><a href="schedule.jsp" target = "frame_b">Schedule for today</a></li><br>
   <li><a href="feedbackSet.jsp" target = "frame_b">Give Feedback</a></li><br>
-  <li><a href="getFeedback.jsp" target = "frame_b">Get Feedback On Candidate</a></li><br>
-  <li><a href="getfeedbackI.jsp" target = "frame_b">Get Feedback Given by Interviewer</a></li><br>
+  <li><a href="viewFeedback.jsp" target = "frame_b">View Feedback</a></li><br>
   <%} %>
   <li><button class = "btn btn-danger" ><a href="LogoutController" target = "_top">Logout</a></button></li><br>
 </ul>  
